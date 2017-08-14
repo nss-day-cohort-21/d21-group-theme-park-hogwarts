@@ -3,3 +3,4 @@ dist/
 css/
 lib/node_modules/
 .idea/
+lib/.sass-cache
