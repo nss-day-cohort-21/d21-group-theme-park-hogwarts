@@ -1,0 +1,58 @@
+nav{
+    margin-bottom: 20px;
+    background-color: white;
+    margin-top: -130px;
+    border-bottom: 2px solid #e3a000;
+    
+}
+
+.navbar{
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+}
+
+.btn{
+    background: #e3a000;
+    color: white;
+    cursor: pointer;
+}
+
+.container{
+    margin-top: 130px;
+}
+
+//////SEARCH INPUT//////
+.mr-sm-2{
+    width: 70%;
+    border-radius: 5px;
+    height: 40px;
+    padding: 10px;
+   
+}
+
+////COLUMN FOR OUTPUT///
+.output{
+    border-radius: 10px;
+    background: lightblue;
+}
+
+/////MAP/////
+.map{
+    background: gray;
+    padding: 10px;
+}
+
+//////AREA BUTTONS ON MAP//////
+.clickArea{
+    width: 100%;
+    height: 200px;
+    background: none;
+    border: 1px solid white;
+}
+//////FOOTER//////
+.card-footer{
+    margin-top: 20px;
+    height: 100px;
+    border-top: 1px solid #e3a000;
+}
