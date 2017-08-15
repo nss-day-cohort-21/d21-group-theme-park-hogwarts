@@ -10,6 +10,8 @@ $slytherin: #033807;
 $hogwarts-purple: #2d004d;
     $hogwarts-purple-rgba: rgba(45,0,77,.5);
 $button-hover: rgba(45,0,77,.6);
+////large buttons on map
+$button-height: 180px;
 
 body { 
     background-image: url('../images/Hogwarts-castle.jpg');
@@ -24,7 +26,7 @@ body {
 
 ///////NAV BAR ELEMENTS///////
 nav{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     background-color: rgba(255,255,255, 0.6);
     margin-top: -130px;
     border-bottom: 2px solid $hufflepuff;
@@ -57,6 +59,8 @@ nav{
 
 ////COLUMN FOR OUTPUT///
 .output{
+    color: white;
+    padding: 15px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     background: $ravenclaw-rgba;
@@ -106,7 +110,7 @@ nav{
 }
 .clickArea{
     width: 100%;
-    height: 200px;
+    height: $button-height;
     background: none;
     border: none;
     // border: 1px solid white;
@@ -116,7 +120,7 @@ nav{
 ////changes the map when opened and closed
 .clickAreaToggle{
     width: 100%;
-    height: 200px;
+    height: $button-height;
     cursor: pointer;
     margin-top:2px;
 }
@@ -126,12 +130,11 @@ nav{
     color: white;
     border: 3px solid $hufflepuff;
     transition: all 0.8s ease-in-out;
-    
 }
 
 //button that initiates the map
 #openMap{
-    top:150px;
+    top:80px;
     left:0px;
     background: $slytherin-rgba;
     text-align: center;
@@ -148,7 +151,7 @@ nav{
     border: none;
     cursor: default;
     width: 100%;
-    height: 200px;
+    height: $button-height;
     background: none;
 }
 
@@ -167,13 +170,14 @@ nav{
     transition: all 0.8s ease-in-out;    
     
 }
-// #btnWrapper:hover .hidden-message, 
+
 #mapSecret:hover .hidden-button {
     visibility:visible;
 }
 //////FOOTER//////
 .card-footer{
+    text-align: center;
     margin-top: 20px;
-    height: 100px;
+    height: 80px;
     border-top: 1px solid $hufflepuff;
 }

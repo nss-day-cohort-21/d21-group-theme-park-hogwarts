@@ -1,99 +1,121 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Welcome to Hogwarts School of Witch Craft and Wizardry</title>
-		<!-- STYLESHEETS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">		
-		<link rel="stylesheet" type="text/css" href="css/main.css">
-		<!-- END STYLESHEETS -->
-	</head>
-	<body>
+
+<head>
+	<title>Welcome to Hogwarts School of Witch Craft and Wizardry</title>
+	<!-- STYLESHEETS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+	 crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<!-- END STYLESHEETS -->
+</head>
+
+<body>
 	<div id="wrapper">
 		<!-- NAV BAR BEGIN -->
-			<nav class="navbar navbar-expand-lg navbar-light">
-					<a class="navbar-brand" href="#"><img src="images/Hogwarts-clear.png"></a>
-				
-						<input id="search" class="mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-						<button id="searchBtn" class="btn my-2 my-sm-0" type="submit">ACCIO</button>
-				  </nav>
-			<!-- NAV BAR END -->
+		<nav class="navbar navbar-expand-lg navbar-light">
+			<a class="navbar-brand" href="#"><img src="images/Hogwarts-clear.png"></a>
+
+			<input id="search" class="mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+			<button id="searchBtn" class="btn my-2 my-sm-0" type="submit">ACCIO</button>
+		</nav>
+		<!-- NAV BAR END -->
+
+		<!-- CONTAINER BEGIN FOR GRID -->
 		<div class="container">
+			<!-- COLUMN 1 BEGIN -->
 			<div class="row">
-			  <div class="col-3 output">
-				THIS IS THE AREA FOR THE OUTPUT
-			  </div>
-			  <div class="col-9 map">
-				  <!-- ROW 1 BLOCKS -->
-							<div class="row no-gutters">
-							  <div id="btnWrapper" class="col">
-								<button id="1" class="clickArea">
-									<p class="hidden-message">AREA 1</p>
-								</button>
-							  </div>
-							  <div id="btnWrapper" class="col">
-									<button id="2" class="clickArea">
-										<p class="hidden-message">AREA 2</p>
-									</button>
-								  </div>
-								  <div id="btnWrapper" class="col">
-										<button id="4" class="clickArea">
-											<p class="hidden-message">AREA 3</p>
-										</button>
-									  </div>
-							</div>
-							<!-- ROW 2 BLOCKS -->
-							<div class="row no-gutters">
-									 <div id="btnWrapper" class="col">
-									  <button id="4" class="clickArea">
-											<p class="hidden-message">AREA 4</p>
-									  </button>
-									</div>
+				<div id="output" class="col-3 output">
+					THIS IS THE AREA FOR THE OUTPUT
+				</div>
+				<!-- COLUMN 1 END -->
 
-									 <div id="mapSecret" class="col empty">
-										 <input type="button" id="openMap" class="hidden-button" value="I solemnly swear that I am up to no good"></button>
-									
-									</div>
+				<!-- COLUMN 2 BEGIN -->
+				<div class="col-9 map">
+					<!-- ROW 1 BLOCKS -->
+					<div class="row no-gutters">
+						<div id="btnWrapper" class="col">
+							<button id="box--1" class="clickArea">
+								<p class="hidden-message">AREA 1</p>
+							</button>
+						</div>
 
-									 <div id="btnWrapper" class="col">
-									  <button id="6" class="clickArea"><p class="hidden-message">AREA 5</p></button>
-									</div>
-								  </div>	
-								  
-							<!-- ROW 3 BLOCKS -->
-							<div class="row no-gutters">
-									 <div id="btnWrapper" class="col">
-									  <button id="7" class="clickArea"><p class="hidden-message">AREA 6</p></button>
-									</div>
-									 <div id="btnWrapper" class="col">
-									  <button id="8" class="clickArea"><p class="hidden-message">AREA 7</p></button>
-									</div>
-									 <div id="btnWrapper" class="col">
-									  <button id="9" class="clickArea"><p class="hidden-message">AREA 8</p></button>
-									</div>
-								  </div>	
-			  </div>
+						<div id="btnWrapper" class="col">
+							<button id="box--2" class="clickArea">
+								<p class="hidden-message">AREA 2</p>
+							</button>
+						</div>
+
+						<div id="btnWrapper" class="col">
+							<button id="box--3" class="clickArea">
+								<p class="hidden-message">AREA 3</p>
+							</button>
+						</div>
+					</div>
+					
+					<!-- ROW 2 BLOCKS -->
+					<div class="row no-gutters">
+						<div id="btnWrapper" class="col">
+							<button id="box--4" class="clickArea">
+								<p class="hidden-message">AREA 4</p>
+							</button>
+						</div>
+
+						<div id="mapSecret" class="col empty">
+							<input type="button" id="openMap" class="hidden-button" value="I solemnly swear that I am up to no good" />
+						</div>
+
+						<div id="btnWrapper" class="col">
+							<button id="box--5" class="clickArea">
+								<p class="hidden-message">AREA 5</p>
+							</button>
+						</div>
+					</div>
+
+					<!-- ROW 3 BLOCKS -->
+					<div class="row no-gutters">
+						<div id="btnWrapper" class="col">
+							<button id="box--6" class="clickArea">
+								<p class="hidden-message">AREA 6</p>
+							</button>
+						</div>
+						<div id="btnWrapper" class="col">
+							<button id="box--7" class="clickArea">
+								<p class="hidden-message">AREA 7</p>
+							</button>
+						</div>
+						<div id="btnWrapper" class="col">
+							<button id="box--8" class="clickArea">
+								<p class="hidden-message">AREA 8</p>
+							</button>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
-		<div class="card-footer text-muted">
-				2 days ago
-			  </div>
-	</div>		
+		<!-- CONTAINER END FOR GRID -->
 
+		<!-- FOOTER BEGIN -->
+		<div id="footer" class="card-footer text-muted">
+			2 days ago
+		</div>
+		<!-- FOOTER END -->
 
-		
+	</div>
+	<!-- WRAPPER END -->	
 
+	<!-- SCRIPTS -->
+	<!-- JQUERY -->
+	<script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	 crossorigin="anonymous"></script>
+	<!-- BOOTSTRAP -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+	 crossorigin="anonymous"></script>
 
-<!-- SCRIPTS -->
-		<!-- JQUERY -->
-		<script
-		  src="http://code.jquery.com/jquery-3.2.1.min.js"
-		  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-		  crossorigin="anonymous"></script>
-		<!-- BOOTSTRAP -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-		
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>		
-		<script src="dist/app.js"></script>
-<!-- END SCRIPTS -->
-	</body>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+	 crossorigin="anonymous"></script>
+	<script src="dist/app.js"></script>
+	<!-- END SCRIPTS -->
+</body>
+
 </html>
