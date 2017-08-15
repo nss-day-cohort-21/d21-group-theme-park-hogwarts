@@ -1,9 +1,33 @@
+////COLOR PALLETE
+$gryffindor: #9c1203;
+    $gryffindor-rgba: rgba(156,18,3,.5);
+$ravenclaw: #00165e;
+    $ravenclaw-rgba: rgba(0,22,94,.7);
+$hufflepuff: #e3a000;
+    $hufflepuff-rgba: rgba(227,160,0,.5);
+$slytherin: #033807;
+    $slytherin-rgba: rgba(3,56,7,.5);
+$hogwarts-purple: #2d004d;
+    $hogwarts-purple-rgba: rgba(45,0,77,.5);
+$button-hover: rgba(45,0,77,.6);
+
+body { 
+    background-image: url('../images/Hogwarts-castle.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+}
+
+.container{
+    width: 110%;
+}
+
+///////NAV BAR ELEMENTS///////
 nav{
     margin-bottom: 20px;
-    background-color: white;
+    background-color: rgba(255,255,255, 0.6);
     margin-top: -130px;
-    border-bottom: 2px solid #e3a000;
-    
+    border-bottom: 2px solid $hufflepuff;
 }
 
 .navbar{
@@ -13,7 +37,7 @@ nav{
 }
 
 .btn{
-    background: #e3a000;
+    background: $hufflepuff;
     color: white;
     cursor: pointer;
 }
@@ -33,26 +57,123 @@ nav{
 
 ////COLUMN FOR OUTPUT///
 .output{
-    border-radius: 10px;
-    background: lightblue;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background: $ravenclaw-rgba;
 }
 
 /////MAP/////
+
+//this is the initial state of the map
 .map{
-    background: gray;
+    background-image: url('../images/marauders-map.jpg'); 
+    background-repeat: no-repeat;
+    // background-attachment: fixed;
+    background-position: center; 
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     padding: 10px;
+    transition: all 0.8s ease-in-out;    
+}
+
+.mapButtonClicked{
+    background-image: url('../images/blankmap.jpg'); 
+    background-repeat: no-repeat;
+    // background-attachment: fixed;
+    background-position: center; 
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding: 10px;
+    transition: all 0.8s ease-in-out;
+}
+
+#mapSecret{
+    text-align: center;
 }
 
 //////AREA BUTTONS ON MAP//////
+
+.border{
+    border: 3px solid $hufflepuff;
+}
 .clickArea{
     width: 100%;
     height: 200px;
     background: none;
-    border: 1px solid white;
+    border: none;
+    // border: 1px solid white;
+    margin-top:2px;
+}
+
+////changes the map when opened and closed
+.clickAreaToggle{
+    width: 100%;
+    height: 200px;
+    cursor: pointer;
+    margin-top:2px;
+}
+
+.clickAreaToggle:hover{
+    background: $button-hover;
+    color: white;
+    border: 3px solid $hufflepuff;
+    transition: all 0.8s ease-in-out;
+    
+}
+
+//button that initiates the map
+#openMap{
+    top:150px;
+    left:0px;
+    background: $slytherin-rgba;
+    text-align: center;
+}
+
+#openMap:hover{
+    background-color: $ravenclaw-rgba;
+    cursor: pointer;
+    transition: all 0.8s ease-in-out;
+}
+
+//middle square on map
+.empty{
+    border: none;
+    cursor: default;
+    width: 100%;
+    height: 200px;
+    background: none;
+}
+
+//hides the text on the map areas
+.hidden-message, 
+.hidden-button {
+    position:relative;
+    color: white;
+    bottom:0px;
+    left:0px;
+    visibility:hidden;
+    }
+
+.hidden-message-toggle{
+    visibility:visible;
+    transition: all 0.8s ease-in-out;    
+    
+}
+// #btnWrapper:hover .hidden-message, 
+#mapSecret:hover .hidden-button {
+    visibility:visible;
 }
 //////FOOTER//////
 .card-footer{
     margin-top: 20px;
     height: 100px;
-    border-top: 1px solid #e3a000;
+    border-top: 1px solid $hufflepuff;
 }
