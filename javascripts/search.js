@@ -12,19 +12,31 @@ function getSearchInput () {
 
 var variableInput;
 
+$("#searchBtn").click(function (e) {
+    gettingItStarted()
+
+});
+
+
 $(document).keypress(function(e) {
     if (e.which === 13){
-        $(".clickArea").removeClass("border");
-      if ($("#openMap").val() === "Mischief Managed") {
-          variableInput = $("#search").val();
-          getSearchInput();
-
-      } else {
-          alert("You must open the map!");
-      }
-
+        gettingItStarted()
     }
+
 });
+
+function gettingItStarted  () {
+    $(".clickArea").removeClass("border");
+        if ($("#openMap").val() === "Mischief Managed") {
+            variableInput = $("#search").val();
+            getSearchInput();
+
+        } else {
+            alert("You must open the map!");
+    }
+}
+
+
 
 
 var searchResultAttractionArray = [];
