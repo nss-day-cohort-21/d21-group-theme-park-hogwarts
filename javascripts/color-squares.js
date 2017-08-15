@@ -20,7 +20,7 @@ function getJSON(url) {
         loadAreas.addEventListener("error", loadAreasFailed);
 
         function loadAreasComplete(event) {
-            console.log("event", event);
+            // console.log("event", event);
             if (event.target.status === 200) {
                 console.log("The data loaded, Yo!");
                 areaData = JSON.parse(event.target.responseText);
@@ -42,7 +42,7 @@ function getJSON(url) {
 $("#openMap").on("click", () => {
     if (openMap.value == "I solemnly swear that I am up to no good") {
         getJSON("https://theme-park-19828.firebaseio.com/areas.json")
-            .then(showAreas)
+            // .then(showAreas(areaData))
             .catch(function (e) {
                 console.log(e);
             });
