@@ -12,6 +12,7 @@ function fillThemePark(data){
     let attrAreaDesc;
     let attrAreaName;
     let attrType;
+    let indAreaID;
     
 	attractionKeys.forEach((item) =>{
 		data[item].firebaseID = item;
@@ -20,14 +21,19 @@ function fillThemePark(data){
         attrAreaDesc = data[item].description;
         attrAreaName = data[item].name;
         attrType = data[item].type_id;
+        indAreaID = data[item].id;
+        $(`#box--${attrAreaID}`).on("click", (event)=>{
+            // console.log(event.currentTarget.id);
+            let boxID = event.currentTarget.id;
+            let mainID = boxID.slice(5);
+            if(mainID == attrAreaID){
+                $("#output").html(`${attrAreaID} ${attrAreaDesc} ${attrAreaName} ${attrType}`);
+            }
+        });
         // console.log(attrType);
-
     });
-
-    
     // console.log("themePark", themePark);
     }
-
 
 
 function getAttractionJSON(url) {
@@ -75,6 +81,7 @@ function getAreaInfo(data) {
             // console.log("data", data);
             fillThemePark(data);
             // console.log("themePark", themePark);
+
         });
     });
 
