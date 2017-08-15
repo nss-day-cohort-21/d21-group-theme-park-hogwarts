@@ -58,6 +58,8 @@ $("#openMap").on("click", () => {
     }
 });
 
+var personId = "";
+
     function showAreas(data) {
         let keys = Object.keys(data);
         let colorValue = "";
@@ -68,6 +70,18 @@ $("#openMap").on("click", () => {
             colorValue = data[item].colorTheme;
             indAreaID = data[item].id;
             $(`#box--${indAreaID}`).css("background", `#${colorValue}`);
+            $(`#box--${indAreaID}`).on("click", ()=>{
+                console.log(`${indAreaID}`);
+            });
+
+            // let btnClickers = document.getElementsByClassName(`#box--${indAreaID}`);
+            // for (var i = 0; i < btnClickers.length; i++){
+            //     btnClickers[i].addEventListener("click", (event) => {
+            //         personId = event.currentTarget.id;
+            //         let getWhole = document.getElementById(personId);
+            //         console.log(`${indAreaID}`);
+            //     });
+            // }
         });
 
         $("#openMap").on("click", () => {

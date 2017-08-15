@@ -22,27 +22,6 @@ function fillThemePark(data){
         attrType = data[item].type_id;
         // console.log(attrType);
 
-        let attr1 = themePark.
-        filter( attrAreaID => { return data[item].area_id == 1; });
-
-        let attr2 = themePark.
-        filter( attrAreaID => { return data[item].area_id == 2; });
-
-        let attr3 = themePark.
-        filter( attrAreaID => { return data[item].area_id == 3; });
-
-        let attr4 = themePark.
-        filter( attrAreaID => { return data[item].area_id == 4; });
-
-        let attr5 = themePark.
-        filter( attrAreaID => { return data[item].area_id == 5; });
-
-        let attr6 = themePark.
-        filter( attrAreaID => { return data[item].area_id == 6; });
-
-        let attr7 = themePark.
-        filter( attrAreaID => { return data[item].area_id == 7; });
-
     });
 
     
