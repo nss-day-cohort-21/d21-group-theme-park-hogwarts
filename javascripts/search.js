@@ -40,24 +40,24 @@ function compareSearchResults (attraction) {
 }
 
 
-function areasToHighlight(firstResult) {
-    var arrayAreasToHighlight = [];
+// function areasToHighlight(firstResult) {
+//     var arrayAreasToHighlight = [];
 
-    for(var i = 1; i < 8; i++ ){
-        var resultObject = firstResult.find(getAttractionId);
+//     for(var i = 1; i < 8; i++ ){
+//         var resultObject = firstResult.find(getAttractionId);
 
-        function getAttractionId(theObject) {
-            return theObject.area_id === i;
-        }
+//         function getAttractionId(theObject) {
+//             return theObject.area_id === i;
+//         }
 
-        if (resultObject) {
-            arrayAreasToHighlight.push("box--" + resultObject.area_id);
-        }
-    }
-    arrayAreasToHighlight.forEach((value, index) =>  {
-            let elementBordered = document.getElementById(value);
-            elementBordered.classList.add("border");
+//         if (resultObject) {
+//             arrayAreasToHighlight.push("box--" + resultObject.area_id);
+//         }
+//     }
+//     arrayAreasToHighlight.forEach((value, index) =>  {
+//             let elementBordered = document.getElementById(value);
+//             elementBordered.classList.add("border");
 
-        });
+//         });
 
-}
+// }
