@@ -62,7 +62,7 @@ $("#openMap").on("click", () => {
         let keys = Object.keys(data);
         let colorValue = "";
         let indAreaID;
-        keys.forEach((item) => {
+        $.each(keys,(index, item) => {
             data[item].firebaseID = item;
             areaData.push(data[item]);
             colorValue = data[item].colorTheme;
@@ -71,7 +71,7 @@ $("#openMap").on("click", () => {
         });
 
         $("#openMap").on("click", () => {
-            keys.forEach((item) => {
+           $.each(keys,(index, item) => { 
             data[item].firebaseID = item;
             areaData.push(data[item]);
             colorValue = data[item].colorTheme;
