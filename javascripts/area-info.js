@@ -26,8 +26,10 @@ function fillThemePark(data){
             // console.log(event.currentTarget.id);
             let boxID = event.currentTarget.id;
             let mainID = boxID.slice(5);
+            console.log("mainID", mainID);
             if(mainID == attrAreaID){
-                $("#output").html(`${attrAreaID} ${attrAreaDesc} ${attrAreaName} ${attrType}`);
+                // console.log(themePark);
+                document.getElementById("output").innerHTML += `<h2>${attrAreaName}</h2> ${attrAreaID} ${attrAreaDesc}  ${attrType} `;
             }
         });
         // console.log(attrType);
@@ -78,9 +80,7 @@ function getAreaInfo(data) {
 
         attractionLoader.addEventListener("load", function(){
             let data = JSON.parse(this.responseText);
-            // console.log("data", data);
             fillThemePark(data);
-            // console.log("themePark", themePark);
 
         });
     });
