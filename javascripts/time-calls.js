@@ -5,9 +5,6 @@ console.log( "datacalls.js" );
 $(document).ready(function() {
 
 
-
-
-
 function loadTime() {
 	return new Promise(function(resolve, reject) {
 
@@ -32,7 +29,7 @@ function loadAreas() {
 		getAreas.send();
 		getAreas.addEventListener("load", (event) => {
 			let areas = JSON.parse(event.target.responseText);
-			console.log( "areas", areas );
+			// console.log( "areas", areas );
 			resolve(areas);
 		});
 	});
@@ -62,18 +59,35 @@ loadTime()
 	}).then
 	((loadedAreas) => {
 		console.log( "loaded", loadedAreas );
-		// let areas = loadedAreas;
 
-		for (let i = 0; i < timeReturn.length; i++) {
-
-			for (let j = 0; j < loadedAreas.length; j++) {
-				if (timeReturn[i].area_id === loadedAreas[j].id) {
-					console.log( "loadedAreas.name", loadedAreas[j].name );
-					timeReturn[i].area_name = loadedAreas[j].name;	
+		for (let i = 0; i < loadedAreas.length; i++) {
+			// console.log( "i", i );
+			for (let j = 0; j < timeReturn.length; j++) {
+				// console.log( "j", j );
+				if (timeReturn[j].area_id === loadedAreas[i].id) {
+					// timeReturn.push(loadedAreas[i].name);
+					timeReturn[j].area_name = loadedAreas[i].name;
 				}
-			}// console.log( "test" );	// 
+			}
 		}
 
+	});
+
+		// timeReturn.forEach((object) => {
+		// 	// console.log( "object", object.area_id );
+		// 	// if (object.area_id === loadedAreas.id) {
+		// 	// 	console.log( "yes" );
+		// 	// }
+
+		// 	});
+		// });
+
+
+			// loadedAreas.forEach((area) => {
+			// 	let areaId = area.id;
+			// 	let areaName = area.id;
+
+			// 	console.log( "object.name", object.name );
 
 
 		// areas.forEach(item) => {
@@ -85,7 +99,7 @@ loadTime()
 		// for (let i = 0; i < loadedAreas.length; i++) {
 		// 	console.log( "test" );
 		// }
-	});
+
 // let areaReturn = [];
 // console.log( "areaReturn", areaReturn );
 
@@ -106,11 +120,21 @@ loadTime()
 // 	});
 
 
-});
+});  //END DOCUMENT READY
 
 
 
 
+		// 	for (let i = 0; i < timeReturn.length; i++) {
+
+		// 	for (let j = 0; j < loadedAreas.length; j++) {
+		// 		if (timeReturn[i].area_id === loadedAreas[j].id) {
+		// 			console.log( "loadedAreas.name", loadedAreas[j].name );
+		// 			// timeReturn[i].area_name = loadedAreas[j].name;
+					
+		// 		}
+		// 	}
+		// }
 
 
 
