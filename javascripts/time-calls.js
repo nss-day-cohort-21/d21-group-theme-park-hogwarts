@@ -2,10 +2,11 @@
 
 console.log( "datacalls.js" );
 
-$(document).ready(function() {
+// $(document).ready(function() {
 
+var themepark = {};
 
-function loadTime() {
+themepark.loadTime = function() {
 	return new Promise(function(resolve, reject) {
 
 		let getTimes = new XMLHttpRequest();
@@ -19,9 +20,9 @@ function loadTime() {
 
 	});
 
-}
+};
 
-function loadAreas() {
+themepark.loadAreas = function() {
 	return new Promise(function(resolve, reject) {
 
 		let getAreas = new XMLHttpRequest();
@@ -33,9 +34,9 @@ function loadAreas() {
 			resolve(areas);
 		});
 	});
-}
+};
 
-function loadTypes() {
+themepark.loadTypes = function() {
 	return new Promise(function(resolve, reject) {
 
 		let getTypes = new XMLHttpRequest();
@@ -43,128 +44,79 @@ function loadTypes() {
 		getTypes.send();
 		getTypes.addEventListener("load", (event) => {
 			let types = JSON.parse(event.target.responseText);
-			console.log( "types", types );
+			// console.log( "types", types );
 			resolve(types);
 		});
 	});
-}
+};
 
+themepark.getAttractions = function(btnNum){
+    return new Promise(function(resolve, reject) {
+    let attractionLoader = new XMLHttpRequest();
 
+    attractionLoader.open("GET", `https://theme-park-19828.firebaseio.com/attractions.json?orderBy="area_id"&equalTo=${btnNum}`);
+    attractionLoader.send();                
+    attractionLoader.addEventListener("load", (event) => {
+    
+    let attractions = JSON.parse(event.target.responseText);
+            console.log( "attractions", attractions );
+            resolve(attractions);
+        });
+    });
+};
 
-let timeReturn = [];
+themepark.attractionInfo = [];
 
 let regex = /([^1][2]:)([0-5][0-9][p])\w+/ig;
 
-console.log( "timeReturn", timeReturn );
+console.log( "themepark.attractionInfo", themepark.attractionInfo );
 
-loadTime()
+themepark.loadTime()
 .then(
 	(timeData) => {
 
 		timeData.forEach((item)=> {
 			if (regex.test(item.times)) {
-				timeReturn.push(item);
+				themepark.attractionInfo.push(item);
 			}
 				
 		});
-		return loadAreas();
+		return themepark.loadAreas();
 
 	}).then
 	((loadedAreas) => {
-		console.log( "loaded", loadedAreas );
+		// console.log( "loaded", loadedAreas );
 
 		for (let i = 0; i < loadedAreas.length; i++) {
 			// console.log( "i", i );
-			for (let j = 0; j < timeReturn.length; j++) {
+			for (let j = 0; j < themepark.attractionInfo.length; j++) {
 				// console.log( "j", j );
-				if (timeReturn[j].area_id === loadedAreas[i].id) {
+				if (themepark.attractionInfo[j].area_id === loadedAreas[i].id) {
 					// timeReturn.push(loadedAreas[i].name);
-					timeReturn[j].area_name = loadedAreas[i].name;
+					themepark.attractionInfo[j].area_name = loadedAreas[i].name;
 				}
 			}
 		}
 
-		return loadTypes();
+		return themepark.loadTypes();
 
 	}).then
 	((loadedTypes) => {
-		console.log( "loadedTypes", loadedTypes );
+		// console.log( "loadedTypes", loadedTypes );
 
 		for (let i = 0; i < loadedTypes.length; i++) {
 
-			for (let j = 0; j < timeReturn.length; j++) {
-				if (timeReturn[j].type_id === loadedTypes[i].id) {
+			for (let j = 0; j < themepark.attractionInfo.length; j++) {
+				if (themepark.attractionInfo[j].type_id === loadedTypes[i].id) {
 
-					timeReturn[j].attraction_type = loadedTypes[i].name;
+					themepark.attractionInfo[j].attraction_type = loadedTypes[i].name;
 				}
 			}
 		}
 	});
 
-		// timeReturn.forEach((object) => {
-		// 	// console.log( "object", object.area_id );
-		// 	// if (object.area_id === loadedAreas.id) {
-		// 	// 	console.log( "yes" );
-		// 	// }
 
-		// 	});
-		// });
-
-
-			// loadedAreas.forEach((area) => {
-			// 	let areaId = area.id;
-			// 	let areaName = area.id;
-
-			// 	console.log( "object.name", object.name );
-
-
-		// areas.forEach(item) => {
-		// 	console.log( "item", item );
-		// }
-		// loadedAreas.forEach(item) => {
-
-		// }
-		// for (let i = 0; i < loadedAreas.length; i++) {
-		// 	console.log( "test" );
-		// }
-
-// let areaReturn = [];
-// console.log( "areaReturn", areaReturn );
-
-// 		$.ajax({
-// 			url: 'https://theme-park-19828.firebaseio.com/areas.json'
-// 		})
-// 		.done(function(results) {
-// 			// console.log(results);
-// 			results.forEach((item) => {
-
-// 				areaReturn.push(item);
-				
-// 			});
-
-// 		})
-// 		.fail(function() {
-// 			console.log("error");
-// 	});
-
-
-});  //END DOCUMENT READY
-
-
-
-
-		// 	for (let i = 0; i < timeReturn.length; i++) {
-
-		// 	for (let j = 0; j < loadedAreas.length; j++) {
-		// 		if (timeReturn[i].area_id === loadedAreas[j].id) {
-		// 			console.log( "loadedAreas.name", loadedAreas[j].name );
-		// 			// timeReturn[i].area_name = loadedAreas[j].name;
-					
-		// 		}
-		// 	}
-		// }
-
-
+module.exports = themepark;
 
 
 

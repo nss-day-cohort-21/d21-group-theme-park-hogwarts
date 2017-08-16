@@ -1,93 +1,49 @@
 "use strict";
 console.log("area-info.js, Yo!");
 
+let themepark = require("./time-calls.js");
 
+$("#map").click((event) => {
+    if (event.target.className === "clickArea"){
+        let btnID = event.target.id;
+        let btnNum = btnID.slice(5);
+        themepark.attractionInfo.length = 0;
 
-
-
-
-// var areaDataInfo = {};
-// var areaID = "";
-
-// let themePark = [];
-
-// function fillThemePark(data){
-//     let attractionKeys = Object.keys(data);
-//     let attrAreaID;
-//     let attrAreaDesc;
-//     let attrAreaName;
-//     let attrType;
-//     let indAreaID;
+        themepark.getAttractions(btnNum)
+        .then ((attractionData) => {
+            // console.log("att", attractionData);
+            for (let obj in attractionData) {
+                themepark.attractionInfo.push(attractionData[obj]);
+            }
+            return themepark.loadTypes();
+        }).then
+        ((loadedTypes) => {
+            loadedTypes.forEach((item, index)=>{
+                themepark.attractionInfo.forEach((element, position)=>{
+                    if(item.id === themepark.attractionInfo[position].type_id){
+                        // console.log("ARRAY!!!", item);
+                        themepark.attractionInfo[position].attraction_type = item.name;
+                        // console.log("YESSS!", themepark.attractionInfo[position].attraction_type);
+                    }
+                });
+            });
+            // console.log("MUTATION", themepark.attractionInfo);
+            return themepark.loadAreas();
+        }).then
+        ((loadedAreas) => {
+            loadedAreas.forEach((item, index)=>{
+                themepark.attractionInfo.forEach((element, position)=>{
+                    if(item.id === themepark.attractionInfo[position].area_id){
+                        // console.log("ARRAY!!!", item);
+                        themepark.attractionInfo[position].area_name = item.name;
+                        // console.log("YESSS!", themepark.attractionInfo[position].attraction_type);
+                    }
+                });
+                
+            });
+            console.log("birth", themepark.attractionInfo);
+            // console.log("areas", loadedAreas);
+        });
+    }
+});
     
-// 	attractionKeys.forEach((item) =>{
-// 		data[item].firebaseID = item;
-//         themePark.push(data[item]);
-//         attrAreaID = data[item].area_id;
-//         attrAreaDesc = data[item].description;
-//         attrAreaName = data[item].name;
-//         attrType = data[item].type_id;
-//         indAreaID = data[item].id;
-//         $(`#box--${attrAreaID}`).on("click", (event)=>{
-//             // console.log(event.currentTarget.id);
-//             let boxID = event.currentTarget.id;
-//             let mainID = boxID.slice(5);
-//             console.log("mainID", mainID);
-//             if(mainID == attrAreaID){
-//                 // console.log(themePark);
-//                 document.getElementById("output").innerHTML += `<h2>${attrAreaName}</h2> ${attrAreaID} ${attrAreaDesc}  ${attrType} `;
-//             }
-//         });
-//         // console.log(attrType);
-//     });
-//     // console.log("themePark", themePark);
-//     }
-
-
-// function getAttractionJSON(url) {
-//     return new Promise(function (resolve, reject) {
-//         var loadAreaInfo = new XMLHttpRequest();
-
-//         loadAreaInfo.addEventListener("load", loadAreasComplete);
-//         loadAreaInfo.addEventListener("error", loadAreasFailed);
-
-//         function loadAreasComplete(event) {
-//             // console.log("event", event);
-//             if (event.target.status === 200) {
-//                 console.log("The data loaded, Yo!");
-//                 areaDataInfo = JSON.parse(event.target.responseText);
-//                 getAreaInfo(areaDataInfo);
-//                 // console.log(areaDataInfo);
-//             } else {
-//                 console.log("Check the spelling of your file, Yo!");
-//             }
-//         }
-//         function loadAreasFailed(event) {
-//             console.log("Yo! Your data failed!");
-//         }
-//         loadAreaInfo.open("GET", url);
-//         loadAreaInfo.send();
-//     });
-// }
-
-// getAttractionJSON("https://theme-park-19828.firebaseio.com/areas.json");
-
-// function getAreaInfo(data) {
-//     let keys = Object.keys(data);
-//     let area_id;
-//     $.each(keys,(index, item) => {
-//         data[item].firebaseID = item;
-//         area_id = data[item].id;
-
-//         let attractionLoader = new XMLHttpRequest();
-//         attractionLoader.open("GET", `https://theme-park-19828.firebaseio.com/attractions.json?orderBy="area_id"&equalTo=${area_id}`);
-//         console.log("attractionLoader val", `https://theme-park-19828.firebaseio.com/attractions.json?orderBy="area_id"&equalTo=${area_id}`);
-//         attractionLoader.send();
-
-//         attractionLoader.addEventListener("load", function(){
-//             let data = JSON.parse(this.responseText);
-//             fillThemePark(data);
-
-//         });
-//     });
-
-// }
