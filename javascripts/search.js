@@ -46,9 +46,9 @@ function areasToHighlight(firstResult) {
     for(var i = 1; i < 8; i++ ){
         var resultObject = firstResult.find(getAttractionId);
 
-        function getAttractionId(theObject) {
+        var getAttractionId = function(theObject) {
             return theObject.area_id === i;
-        }
+        };
 
         if (resultObject) {
             arrayAreasToHighlight.push("box--" + resultObject.area_id);
