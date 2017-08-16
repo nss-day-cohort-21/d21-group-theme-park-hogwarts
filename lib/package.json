@@ -13,6 +13,8 @@
   "dependencies": {
     "bootstrap": "^4.0.0-beta",
     "handlebars": "^4.0.6",
-    "hbsfy": "^2.7.0"
+    "hbsfy": "^2.7.0",
+    "jquery-timepicker": "^1.3.3",
+    "moment": "^2.18.1"
   }
 }
