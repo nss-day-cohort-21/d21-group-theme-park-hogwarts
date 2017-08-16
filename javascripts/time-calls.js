@@ -9,7 +9,7 @@ function loadTime() {
 	return new Promise(function(resolve, reject) {
 
 		let getTimes = new XMLHttpRequest();
-		getTimes.open('GET', 'https://theme-park-19828.firebaseio.com/attractions.json?orderBy="times"' );
+		getTimes.open('GET', 'https://theme-park-19828.firebaseio.com/attractions.json?orderBy="area_id"' );
 		getTimes.send();
 		getTimes.addEventListener("load", (event) => {
 			let times = JSON.parse(event.target.responseText);
@@ -35,7 +35,24 @@ function loadAreas() {
 	});
 }
 
+function loadTypes() {
+	return new Promise(function(resolve, reject) {
+
+		let getTypes = new XMLHttpRequest();
+		getTypes.open('GET', 'https://theme-park-19828.firebaseio.com/attraction_types.json');
+		getTypes.send();
+		getTypes.addEventListener("load", (event) => {
+			let types = JSON.parse(event.target.responseText);
+			console.log( "types", types );
+			resolve(types);
+		});
+	});
+}
+
+
+
 let timeReturn = [];
+
 let regex = /([^1][2]:)([0-5][0-9][p])\w+/ig;
 
 console.log( "timeReturn", timeReturn );
@@ -52,10 +69,6 @@ loadTime()
 		});
 		return loadAreas();
 
-	},
-	(reject) => {
-		console.log( "fail");
-
 	}).then
 	((loadedAreas) => {
 		console.log( "loaded", loadedAreas );
@@ -71,6 +84,21 @@ loadTime()
 			}
 		}
 
+		return loadTypes();
+
+	}).then
+	((loadedTypes) => {
+		console.log( "loadedTypes", loadedTypes );
+
+		for (let i = 0; i < loadedTypes.length; i++) {
+
+			for (let j = 0; j < timeReturn.length; j++) {
+				if (timeReturn[j].type_id === loadedTypes[i].id) {
+
+					timeReturn[j].attraction_type = loadedTypes[i].name;
+				}
+			}
+		}
 	});
 
 		// timeReturn.forEach((object) => {
