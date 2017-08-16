@@ -13,6 +13,11 @@ function getSearchInput () {
 
 var variableInput;
 
+$(document).ready(() => {
+
+
+
+
 $(document).keypress(function(e) {
     if (e.which === 13){
         $(".clickArea").removeClass("border");
@@ -26,6 +31,7 @@ $(document).keypress(function(e) {
     }
 });
 
+});
 
 function compareSearchResults(attraction) {
     var attractionName = attraction.name;

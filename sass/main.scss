@@ -117,6 +117,18 @@ nav{
     margin-top:2px;
 }
 
+/* OUTPUT */
+
+#output {
+    overflow: auto;
+    height: 600px;
+    padding: 5px;
+}
+
+.hide {
+    display: none;
+}
+
 ////changes the map when opened and closed
 .clickAreaToggle{
     width: 100%;
