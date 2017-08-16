@@ -4,8 +4,9 @@ function getSearchInput () {
     $.ajax({
         url: "https://theme-park-19828.firebaseio.com/attractions.json"
     }).done(function(attractionData){
-        let firstResult = attractionData.filter(compareSearchResults);
-        areasToHighlight(firstResult);
+        var searchedAttractions = attractionData.filter(compareSearchResults);
+        console.log("searchedAttractions", searchedAttractions);
+        areasToHighlight(searchedAttractions);
     });
 
 }
@@ -20,44 +21,40 @@ $(document).keypress(function(e) {
           getSearchInput();
 
       } else {
-          alert("You must open the map!");
+          window.alert("You must open the map!");
       }
-
     }
 });
 
 
-var searchResultAttractionArray = [];
-
-function compareSearchResults (attraction) {
-    var attractionName = attraction.name ;
+function compareSearchResults(attraction) {
+    var attractionName = attraction.name;
     var expToSearch = new RegExp(variableInput, "i");
     if (attractionName.search(expToSearch) != -1){
-        searchResultAttractionArray.push(attraction);
-        return searchResultAttractionArray;
+    return attraction;
     }
-
 }
 
 
-function areasToHighlight(firstResult) {
+function areasToHighlight(searchedAttractionsInput) {
+    var attractionIdArray = [];
     var arrayAreasToHighlight = [];
 
-    for(var i = 1; i < 8; i++ ){
-        var resultObject = firstResult.find(getAttractionId);
+    searchedAttractionsInput.forEach((element) => {
+        attractionIdArray.push(element.area_id);
+    });
 
-        var getAttractionId = function(theObject) {
-            return theObject.area_id === i;
-        };
-
-        if (resultObject) {
-            arrayAreasToHighlight.push("box--" + resultObject.area_id);
+    for(var i = 1; i < 8; i++ ) {
+        if (attractionIdArray.includes(i)) {
+            arrayAreasToHighlight.push("box--" + i);
         }
     }
+
+    console.log("arrayAreasToHighlight", arrayAreasToHighlight);
+
     arrayAreasToHighlight.forEach((value, index) =>  {
             let elementBordered = document.getElementById(value);
             elementBordered.classList.add("border");
 
         });
-
 }
