@@ -8,6 +8,6 @@ Search Button = $("#searchBtn")
 Button Area = $(".clickArea")
 Footer = $("$footer")
 */
-let loadJSON = require("./color-squares.js");
+let loadJSON = require("./color-squares");
 var openMap = document.getElementById("openMap");
 

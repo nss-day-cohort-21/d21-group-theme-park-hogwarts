@@ -1,12 +1,6 @@
 "use strict";
 console.log("Color-squares, yo!");
 
-// https://theme-park-19828.firebaseio.com/areas.json
-
-//I want the ID associated with the area to display when the map is opened.
-//the IDs on the divs are numbered 1-8; the IDs for the attrations are 1-7
-
-// let colorEvents = require("./event-listeners.js");
 var openMap = document.getElementById("openMap");
 
 var areaData = {};
@@ -20,29 +14,53 @@ function getJSON(url) {
         loadAreas.addEventListener("error", loadAreasFailed);
 
         function loadAreasComplete(event) {
-            console.log("event", event);
+            // console.log("event", event);
             if (event.target.status === 200) {
                 console.log("The data loaded, Yo!");
                 areaData = JSON.parse(event.target.responseText);
                 showAreas(areaData);
+                // checkAreas(areaData);
             } else {
                 console.log("Check the spelling of your file, Yo!");
             }
         }
-
         function loadAreasFailed(event) {
             console.log("Yo! Your data failed!");
         }
-
         loadAreas.open("GET", url);
         loadAreas.send();
     });
 }
 
+// function checkAreas(data) {
+//     let keys = Object.keys(data);
+//     let indAreaID;
+//     let attrAreaID;
+//     let attrAreaDesc;
+//     let attrAreaName;
+//     let attrType;
+//     $.each(keys,(index, item) => {
+//         attrAreaID = data[item].area_id;
+//         attrAreaDesc = data[item].description;
+//         attrAreaName = data[item].name;
+//         data[item].firebaseID = item;
+//         areaData.push(data[item]);
+//         indAreaID = data[item].id;
+//         $(`#box--${indAreaID}`).on("click", (event)=>{
+//             // console.log(event.currentTarget.id);
+//             let boxID = event.currentTarget.id;
+//             let mainID = boxID.slice(5);
+//             console.log(attrType);
+//         });
+
+//     });
+// }
+
 $("#openMap").on("click", () => {
     if (openMap.value == "I solemnly swear that I am up to no good") {
         getJSON("https://theme-park-19828.firebaseio.com/areas.json")
-            .then(showAreas)
+            // .then(showAreas(areaData))
+            // .then(checkAreas(areaData))
             .catch(function (e) {
                 console.log(e);
             });
@@ -62,7 +80,7 @@ $("#openMap").on("click", () => {
         let keys = Object.keys(data);
         let colorValue = "";
         let indAreaID;
-        keys.forEach((item) => {
+        $.each(keys,(index, item) => {
             data[item].firebaseID = item;
             areaData.push(data[item]);
             colorValue = data[item].colorTheme;
@@ -70,14 +88,16 @@ $("#openMap").on("click", () => {
             $(`#box--${indAreaID}`).css("background", `#${colorValue}`);
         });
 
+
         $("#openMap").on("click", () => {
-            keys.forEach((item) => {
+           $.each(keys,(index, item) => { 
             data[item].firebaseID = item;
             areaData.push(data[item]);
-            colorValue = data[item].colorTheme;
             indAreaID = data[item].id;
                 if(openMap.value == "I solemnly swear that I am up to no good"){
-                $(`#box--${indAreaID}`).css("background", `none`); 
+                $("#output").html(" ");
+                $(`#box--${indAreaID}`).css("background", `none`);
+                $(`#box--${indAreaID}`).css("cursor", `pointer`);
                 }
             });
         });    
