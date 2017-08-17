@@ -91,14 +91,17 @@ function areasToHighlight(searchedAttractionsInput) {
 
     console.log("arrayAreasToHighlight", arrayAreasToHighlight);
 
-    let btnWrapper = document.getElementById("btnWrapper");
-    btnWrapper.classList.remove("highlighted");
+    for (var j = 1; j <= 8; j++) {
+        let buttonId = ("box--" + j);
+        let buttonDiv = document.getElementById(buttonId).parentElement;
+        buttonDiv.classList.remove("highlighted");
+    }
 
     arrayAreasToHighlight.forEach((value, index) =>  {
             let elementToHighlight = document.getElementById(value);
-            let elementBordered = elementToHighlight.parentElement;
-            // elementBordered.classList.add("border");
-            elementBordered.classList.add("highlighted");
+            let elementParent = elementToHighlight.parentElement;
+
+            elementParent.classList.add("highlighted");
 
         });
 }
