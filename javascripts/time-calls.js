@@ -13,6 +13,7 @@ themepark.loadTime = function() {
 		getTimes.open('GET', 'https://theme-park-19828.firebaseio.com/attractions.json?orderBy="area_id"' );
 		getTimes.send();
 		getTimes.addEventListener("load", (event) => {
+			themepark.clearHighlight();
 			let times = JSON.parse(event.target.responseText);
 			resolve(times);
 		});
@@ -56,10 +57,19 @@ themepark.getAttractions = function(btnNum){
     attractionLoader.addEventListener("load", (event) => {
     
     let attractions = JSON.parse(event.target.responseText);
+    		themepark.clearHighlight();
             console.log( "attractions", attractions );
             resolve(attractions);
         });
     });
+};
+
+themepark.clearHighlight = function(){
+    for (var j = 1; j <= 8; j++) {
+        let buttonId = ("box--" + j);
+        let buttonDiv = document.getElementById(buttonId).parentElement;
+        buttonDiv.classList.remove("highlighted");
+    }
 };
 
 themepark.attractionInfo = [];
