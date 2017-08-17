@@ -64,6 +64,8 @@ themepark.getAttractions = function(btnNum){
 
 themepark.attractionInfo = [];
 
+themepark.itinArray = [];
+
 console.log( "themepark.attractionInfo", themepark.attractionInfo );
 
 module.exports = themepark;
