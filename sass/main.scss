@@ -137,7 +137,8 @@ nav{
 /* OUTPUT */
 
 #output {
-    overflow: auto;
+    overflow-x: auto;
+    white-space: wrap;
     height: 600px;
     padding: 15px;
 }
@@ -148,6 +149,11 @@ nav{
 
 .hide {
     display: none;
+}
+
+#timeList li {
+ padding: 10px;
+ list-style: none;
 }
 
 ////changes the map when opened and closed
