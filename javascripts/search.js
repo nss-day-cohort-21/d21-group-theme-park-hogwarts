@@ -91,9 +91,20 @@ function areasToHighlight(searchedAttractionsInput) {
 
     console.log("arrayAreasToHighlight", arrayAreasToHighlight);
 
+
+// themepark.clearHighlight(); 
+
+    // for (var j = 1; j <= 8; j++) {
+    //     let buttonId = ("box--" + j);
+    //     let buttonDiv = document.getElementById(buttonId).parentElement;
+    //     buttonDiv.classList.remove("highlighted");
+    // }
+
     arrayAreasToHighlight.forEach((value, index) =>  {
-            let elementBordered = document.getElementById(value);
-            elementBordered.classList.add("border");
+            let elementToHighlight = document.getElementById(value);
+            let elementParent = elementToHighlight.parentElement;
+
+            elementParent.classList.add("highlighted");
 
         });
 }

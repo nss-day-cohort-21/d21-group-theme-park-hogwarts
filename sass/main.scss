@@ -169,9 +169,14 @@ text-align: center;
 
 //////AREA BUTTONS ON MAP//////
 
+.highlighted {
+    background-color: white;
+}
+
 .border{
 border: 10px solid $hufflepuff;
 }
+
 .clickArea{
 width: 100%;
 height: $button-height;
