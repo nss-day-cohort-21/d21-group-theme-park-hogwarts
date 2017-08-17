@@ -30,13 +30,13 @@ function showAreas(data) {
             $.each(keys,(index, item) => {
                 colorValue = data[item].colorTheme;
                 indAreaID = data[item].id;                
-                let R = hexToR(`${colorValue}`);
-                let G = hexToG(`${colorValue}`);
-                let B = hexToB(`${colorValue}`);
-                function hexToR(h) {return parseInt((cutHex(h)).substring(0,2),16);}
-                function hexToG(h) {return parseInt((cutHex(h)).substring(2,4),16);}
-                function hexToB(h) {return parseInt((cutHex(h)).substring(4,6),16);}
-                function cutHex(h) {return (h.charAt(0)=="#") ? h.substring(1,7):h;}
+                let R = convertHexR(`${colorValue}`);
+                let G = convertHexG(`${colorValue}`);
+                let B = convertHexB(`${colorValue}`);
+                function convertHexR(h) {return parseInt((removeHash(h)).substring(0,2),16);}
+                function convertHexG(h) {return parseInt((removeHash(h)).substring(2,4),16);}
+                function convertHexB(h) {return parseInt((removeHash(h)).substring(4,6),16);}
+                function removeHash(h) {return (h.charAt(0)=="#") ? h.substring(1,7):h;}
                     // console.log(R,G,B);
                     let alhpaColor = `rgba(${R},${G},${B},.4)`;
                 $(`#box--${indAreaID}`).css("background-color", `${alhpaColor}`);
