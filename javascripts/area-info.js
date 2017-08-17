@@ -48,7 +48,6 @@ $("#map").click((event) => {
             $(".attractionName").click(function () {
                 $(this).closest("div").find(".hidden").toggle();
             });
-            console.log("includes area name and attraction type", themepark.attractionInfo);
         });
     }
 });
