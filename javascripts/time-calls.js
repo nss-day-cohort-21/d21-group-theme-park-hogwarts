@@ -14,7 +14,6 @@ themepark.loadTime = function() {
 		getTimes.send();
 		getTimes.addEventListener("load", (event) => {
 			let times = JSON.parse(event.target.responseText);
-			// console.log( "times", times );
 			resolve(times);
 		});
 
@@ -30,7 +29,6 @@ themepark.loadAreas = function() {
 		getAreas.send();
 		getAreas.addEventListener("load", (event) => {
 			let areas = JSON.parse(event.target.responseText);
-			// console.log( "areas", areas );
 			resolve(areas);
 		});
 	});
@@ -44,7 +42,6 @@ themepark.loadTypes = function() {
 		getTypes.send();
 		getTypes.addEventListener("load", (event) => {
 			let types = JSON.parse(event.target.responseText);
-			// console.log( "types", types );
 			resolve(types);
 		});
 	});
@@ -85,14 +82,13 @@ themepark.loadTime()
 
 	}).then
 	((loadedAreas) => {
-		// console.log( "loaded", loadedAreas );
 
 		for (let i = 0; i < loadedAreas.length; i++) {
-			// console.log( "i", i );
+
 			for (let j = 0; j < themepark.attractionInfo.length; j++) {
-				// console.log( "j", j );
+				
 				if (themepark.attractionInfo[j].area_id === loadedAreas[i].id) {
-					// timeReturn.push(loadedAreas[i].name);
+
 					themepark.attractionInfo[j].area_name = loadedAreas[i].name;
 				}
 			}
@@ -102,11 +98,11 @@ themepark.loadTime()
 
 	}).then
 	((loadedTypes) => {
-		// console.log( "loadedTypes", loadedTypes );
 
 		for (let i = 0; i < loadedTypes.length; i++) {
 
 			for (let j = 0; j < themepark.attractionInfo.length; j++) {
+				
 				if (themepark.attractionInfo[j].type_id === loadedTypes[i].id) {
 
 					themepark.attractionInfo[j].attraction_type = loadedTypes[i].name;
