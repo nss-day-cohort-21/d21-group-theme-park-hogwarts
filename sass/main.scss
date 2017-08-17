@@ -32,63 +32,6 @@ width: 110%;
 /////HANDLEBARS OUTPUT/////
 ///COLUMN FOR OUTPUT///
 .output{
-color: white;
-padding: 5px;
-border-top-left-radius: 10px;
-border-bottom-left-radius: 10px;
-background: $ravenclaw-rgba;
-}
-
-#singleOutput{
-padding:5px;
-margin-bottom: 5px;
-border: 1px solid $hufflepuff;
-}
-.attractionName{
-font-size: 1.2em;
-color: white;  
-line-height: .2em;  
-
-.attractionName:hover{
-color:$hufflepuff;
-text-decoration: none;
-}
-.attrType{
-font-style: italic;
-font-size: .7em;
-// font-weight: bold;
-text-transform: uppercase;
-}
-
-.areaName{
-font-size: .8em;
-font-style: italic;
-}
-
-#output {
-overflow-x: auto;
-white-space: wrap;
-height: 600px;
-padding: 15px;
-}
-
-.hide {
-display: none;
-}
-
-#timeList li {
-padding: 10px;
-list-style: none;
-}
-
-
-h5{
-color: white;
-}
-
-/////HANDLEBARS OUTPUT/////
-///COLUMN FOR OUTPUT///
-.output{
     color: white;
     padding: 5px;
     border-top-left-radius: 10px;
@@ -319,6 +262,6 @@ border-top: 1px solid $hufflepuff;
 }
 
 #single-input {
-width: 100px;
-padding-left: 10px;
-}
+    width: 100px;
+    padding-left: 10px;
+    }
