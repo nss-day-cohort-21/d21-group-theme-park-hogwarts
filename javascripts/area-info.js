@@ -1,7 +1,10 @@
 "use strict";
 console.log("area-info.js, Yo!");
 
+let Handlebars = require('hbsfy/runtime');
 let themepark = require("./time-calls.js");
+let attractionDesc = require("../templates/attractions.hbs");
+Handlebars.registerHelper('incrementer', (value) => parseInt(value) + 1);
 
 $("#map").click((event) => {
     if (event.target.className === "clickArea clickAreaToggle" || 
@@ -9,10 +12,10 @@ $("#map").click((event) => {
         let btnID = event.target.id;
         let btnNum = btnID.slice(5);
         themepark.attractionInfo.length = 0;
+        $('#output').empty();
 
         themepark.getAttractions(btnNum)
         .then ((attractionData) => {
-            // console.log("att", attractionData);
             for (let obj in attractionData) {
                 themepark.attractionInfo.push(attractionData[obj]);
             }
@@ -22,28 +25,27 @@ $("#map").click((event) => {
             loadedTypes.forEach((item, index)=>{
                 themepark.attractionInfo.forEach((element, position)=>{
                     if(item.id === themepark.attractionInfo[position].type_id){
-                        // console.log("ARRAY!!!", item);
                         themepark.attractionInfo[position].attraction_type = item.name;
-                        // console.log("YESSS!", themepark.attractionInfo[position].attraction_type);
                     }
                 });
             });
-            // console.log("MUTATION", themepark.attractionInfo);
             return themepark.loadAreas();
         }).then
         ((loadedAreas) => {
             loadedAreas.forEach((item, index)=>{
                 themepark.attractionInfo.forEach((element, position)=>{
                     if(item.id === themepark.attractionInfo[position].area_id){
-                        // console.log("ARRAY!!!", item);
                         themepark.attractionInfo[position].area_name = item.name;
-                        // console.log("YESSS!", themepark.attractionInfo[position].attraction_type);
+                        $('#output').append(attractionDesc(themepark.attractionInfo[position]));
+                        
                     }
                 });
                 
             });
-            console.log("birth", themepark.attractionInfo);
-            // console.log("areas", loadedAreas);
+            $(".attractionName").click(function () {
+                $(this).closest("div").find(".hidden").toggle();
+            });
+            console.log("includes area name and attraction type", themepark.attractionInfo);
         });
     }
 });

@@ -66,7 +66,7 @@ nav{
 ////COLUMN FOR OUTPUT///
 .output{
     color: white;
-    padding: 15px;
+    padding: 5px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     background: $ravenclaw-rgba;
@@ -130,6 +130,26 @@ nav{
     margin-top:2px;
 }
 
+.clickArea:focus {
+    outline: 0;
+}
+
+/* OUTPUT */
+
+#output {
+    overflow: auto;
+    height: 600px;
+    padding: 15px;
+}
+
+#output h5 a {
+    color: white;
+}
+
+.hide {
+    display: none;
+}
+
 ////changes the map when opened and closed
 .clickAreaToggle{
     width: 100%;
@@ -188,6 +208,10 @@ nav{
     font-size: 1.5em;
     transition: all 0.8s ease-in-out;    
     
+}
+
+.hidden {
+    display: none;
 }
 
 #mapSecret:hover .hidden-button {
