@@ -36,7 +36,10 @@ $("#map").click((event) => {
                     if(item.id === themepark.attractionInfo[position].area_id){
                         themepark.attractionInfo[position].area_name = item.name;
                         $('#outputList').append(attractionDesc(themepark.attractionInfo[position]));
-                        // $('#outputList').append(`<li>${themepark.attractionInfo[position].name}</li>`);
+                        $(".attractionName").click(function () {
+                            $(this).closest("div").find(".hidden").toggle();
+                        });
+                        
                     }
                 });
                 

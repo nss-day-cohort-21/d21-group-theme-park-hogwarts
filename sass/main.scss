@@ -183,6 +183,14 @@ nav{
     
 }
 
+.hidden {
+    display: none;
+}
+
+#outputList h5 a {
+    color: white;
+}
+
 #mapSecret:hover .hidden-button {
     visibility:visible;
 }
