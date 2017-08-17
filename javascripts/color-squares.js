@@ -32,35 +32,9 @@ function getJSON(url) {
     });
 }
 
-// function checkAreas(data) {
-//     let keys = Object.keys(data);
-//     let indAreaID;
-//     let attrAreaID;
-//     let attrAreaDesc;
-//     let attrAreaName;
-//     let attrType;
-//     $.each(keys,(index, item) => {
-//         attrAreaID = data[item].area_id;
-//         attrAreaDesc = data[item].description;
-//         attrAreaName = data[item].name;
-//         data[item].firebaseID = item;
-//         areaData.push(data[item]);
-//         indAreaID = data[item].id;
-//         $(`#box--${indAreaID}`).on("click", (event)=>{
-//             // console.log(event.currentTarget.id);
-//             let boxID = event.currentTarget.id;
-//             let mainID = boxID.slice(5);
-//             console.log(attrType);
-//         });
-
-//     });
-// }
-
 $("#openMap").on("click", () => {
     if (openMap.value == "I solemnly swear that I am up to no good") {
         getJSON("https://theme-park-19828.firebaseio.com/areas.json")
-            // .then(showAreas(areaData))
-            // .then(checkAreas(areaData))
             .catch(function (e) {
                 console.log(e);
             });

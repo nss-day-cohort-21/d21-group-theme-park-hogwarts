@@ -7,11 +7,11 @@ let attractionDesc = require("../templates/attractions.hbs");
 Handlebars.registerHelper('incrementer', (value) => parseInt(value) + 1);
 
 $("#map").click((event) => {
-    if (event.target.className === "clickArea"){
+    if (event.target.className === "clickArea clickAreaToggle" || event.target.className === "clickArea clickAreaToggle border"){
         let btnID = event.target.id;
         let btnNum = btnID.slice(5);
         themepark.attractionInfo.length = 0;
-        $('#outputList').empty();
+        $('#output').empty();
 
         themepark.getAttractions(btnNum)
         .then ((attractionData) => {
@@ -35,14 +35,14 @@ $("#map").click((event) => {
                 themepark.attractionInfo.forEach((element, position)=>{
                     if(item.id === themepark.attractionInfo[position].area_id){
                         themepark.attractionInfo[position].area_name = item.name;
-                        $('#outputList').append(attractionDesc(themepark.attractionInfo[position]));
-                        $(".attractionName").click(function () {
-                            $(this).closest("div").find(".hidden").toggle();
-                        });
+                        $('#output').append(attractionDesc(themepark.attractionInfo[position]));
                         
                     }
                 });
                 
+            });
+            $(".attractionName").click(function () {
+                $(this).closest("div").find(".hidden").toggle();
             });
             console.log("includes area name and attraction type", themepark.attractionInfo);
         });

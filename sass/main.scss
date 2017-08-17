@@ -60,7 +60,7 @@ nav{
 ////COLUMN FOR OUTPUT///
 .output{
     color: white;
-    padding: 15px;
+    padding: 5px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     background: $ravenclaw-rgba;
@@ -117,12 +117,20 @@ nav{
     margin-top:2px;
 }
 
+.clickArea:focus {
+    outline: 0;
+}
+
 /* OUTPUT */
 
 #output {
     overflow: auto;
     height: 600px;
-    padding: 5px;
+    padding: 15px;
+}
+
+#output h5 a {
+    color: white;
 }
 
 .hide {
@@ -185,10 +193,6 @@ nav{
 
 .hidden {
     display: none;
-}
-
-#outputList h5 a {
-    color: white;
 }
 
 #mapSecret:hover .hidden-button {
