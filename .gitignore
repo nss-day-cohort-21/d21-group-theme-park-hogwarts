@@ -5,3 +5,4 @@ lib/node_modules/
 .idea/
 lib/.sass-cache
 dc-scratchpad.js
+time-info.js

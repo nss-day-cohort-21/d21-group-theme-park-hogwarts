@@ -67,54 +67,7 @@ themepark.getAttractions = function(btnNum){
 
 themepark.attractionInfo = [];
 
-let regex = /([^1][2]:)([0-5][0-9][p])\w+/ig;
-
 console.log( "themepark.attractionInfo", themepark.attractionInfo );
-
-themepark.loadTime()
-.then(
-	(timeData) => {
-
-		timeData.forEach((item)=> {
-			if (regex.test(item.times)) {
-				themepark.attractionInfo.push(item);
-			}
-				
-		});
-		return themepark.loadAreas();
-
-	}).then
-	((loadedAreas) => {
-		// console.log( "loaded", loadedAreas );
-
-		for (let i = 0; i < loadedAreas.length; i++) {
-			// console.log( "i", i );
-			for (let j = 0; j < themepark.attractionInfo.length; j++) {
-				// console.log( "j", j );
-				if (themepark.attractionInfo[j].area_id === loadedAreas[i].id) {
-					// timeReturn.push(loadedAreas[i].name);
-					themepark.attractionInfo[j].area_name = loadedAreas[i].name;
-				}
-			}
-		}
-
-		return themepark.loadTypes();
-
-	}).then
-	((loadedTypes) => {
-		// console.log( "loadedTypes", loadedTypes );
-
-		for (let i = 0; i < loadedTypes.length; i++) {
-
-			for (let j = 0; j < themepark.attractionInfo.length; j++) {
-				if (themepark.attractionInfo[j].type_id === loadedTypes[i].id) {
-
-					themepark.attractionInfo[j].attraction_type = loadedTypes[i].name;
-				}
-			}
-		}
-	});
-
 
 module.exports = themepark;
 

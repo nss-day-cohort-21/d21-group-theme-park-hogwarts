@@ -6,4 +6,5 @@ let eventListeners = require("./event-listeners");
 let areInfo = require("./area-info");
 let time_picker = require("./time_picker");
 let search = require("./search");
+// let timeInfo = require("./time-info");
 
