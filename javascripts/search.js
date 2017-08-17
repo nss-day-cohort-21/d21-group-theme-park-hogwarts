@@ -13,6 +13,11 @@ function getSearchInput () {
 
 var variableInput;
 
+$(document).ready(() => {
+
+
+
+
 $(document).keypress(function(e) {
     if (e.which === 13){
         $(".clickArea").removeClass("border");
@@ -21,11 +26,12 @@ $(document).keypress(function(e) {
           getSearchInput();
 
       } else {
-          window.alert("You must open the map!");
+          window.alert("You must recite the spell and tap the map with your wand, Muggle!");
       }
     }
 });
 
+});
 
 function compareSearchResults(attraction) {
     var attractionName = attraction.name;

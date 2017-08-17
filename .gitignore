@@ -6,3 +6,5 @@ lib/node_modules/
 lib/.sass-cache
 dc-scratchpad.js
 time-info.js
+javascripts/test-colors.js
+

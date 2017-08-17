@@ -14,7 +14,6 @@ themepark.loadTime = function() {
 		getTimes.send();
 		getTimes.addEventListener("load", (event) => {
 			let times = JSON.parse(event.target.responseText);
-			// console.log( "times", times );
 			resolve(times);
 		});
 
@@ -30,7 +29,6 @@ themepark.loadAreas = function() {
 		getAreas.send();
 		getAreas.addEventListener("load", (event) => {
 			let areas = JSON.parse(event.target.responseText);
-			// console.log( "areas", areas );
 			resolve(areas);
 		});
 	});
@@ -44,7 +42,6 @@ themepark.loadTypes = function() {
 		getTypes.send();
 		getTypes.addEventListener("load", (event) => {
 			let types = JSON.parse(event.target.responseText);
-			// console.log( "types", types );
 			resolve(types);
 		});
 	});
