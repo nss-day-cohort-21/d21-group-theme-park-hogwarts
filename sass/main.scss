@@ -12,6 +12,7 @@ $hogwarts-purple: #2d004d;
 $button-hover: rgba(45,0,77,.6);
 ////large buttons on map
 $button-height: 180px;
+$cursor: url(http://cur.cursors-4u.net/user/use-1/use160.cur), progress !important;
 
 body { 
     background-image: url('../images/Hogwarts-castle.jpg');
@@ -20,6 +21,10 @@ body {
     background-position: center; 
 }
 
+body, a:hover {
+    cursor: $cursor;
+} 
+
 .container{
     width: 110%;
 }
@@ -27,7 +32,7 @@ body {
 ///////NAV BAR ELEMENTS///////
 nav{
     margin-bottom: 10px;
-    background-color: rgba(255,255,255, 0.6);
+    background-color: rgba(255,255,255, 0.7);
     margin-top: -130px;
     border-bottom: 2px solid $hufflepuff;
 }
@@ -41,7 +46,7 @@ nav{
 .btn{
     background: $hufflepuff;
     color: white;
-    cursor: pointer;
+    cursor: $cursor;
 }
 
 .container{
@@ -54,6 +59,7 @@ nav{
     border-radius: 5px;
     height: 40px;
     padding: 10px;
+    cursor: $cursor;
    
 }
 
@@ -85,7 +91,7 @@ nav{
 }
 
 .mapButtonClicked{
-    background-image: url('../images/blankmap.jpg'); 
+    background-image: url('../images/blankmap.png'); 
     background-repeat: no-repeat;
     // background-attachment: fixed;
     background-position: center; 
@@ -106,14 +112,21 @@ nav{
 //////AREA BUTTONS ON MAP//////
 
 .border{
-    border: 5px solid $hufflepuff;
+    border: 10px solid $hufflepuff;
 }
 .clickArea{
     width: 100%;
     height: $button-height;
     background: none;
     border: none;
-    // border: 1px solid white;
+    cursor:default;
+    margin-top:2px;
+}
+.clickArea-none{
+    width: 100%;
+    height: $button-height;
+    background: none;
+    border: none;
     margin-top:2px;
 }
 
@@ -141,7 +154,7 @@ nav{
 .clickAreaToggle{
     width: 100%;
     height: $button-height;
-    cursor: pointer;
+    cursor: $cursor;
     margin-top:2px;
 }
 
@@ -158,18 +171,22 @@ nav{
     left:0px;
     background: $slytherin-rgba;
     text-align: center;
+    border-radius: 10px;
+    border: none;
+    height: 50px;
+    font-size: 1.5em;
 }
 
 #openMap:hover{
     background-color: $ravenclaw-rgba;
-    cursor: pointer;
+    cursor: $cursor;
     transition: all 0.8s ease-in-out;
 }
 
 //middle square on map
 .empty{
     border: none;
-    cursor: default;
+    // cursor: default;
     width: 100%;
     height: $button-height;
     background: none;
@@ -187,6 +204,8 @@ nav{
 
 .hidden-message-toggle{
     visibility:visible;
+    font-weight: bold;
+    font-size: 1.5em;
     transition: all 0.8s ease-in-out;    
     
 }

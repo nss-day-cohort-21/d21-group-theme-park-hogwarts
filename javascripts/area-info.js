@@ -7,7 +7,8 @@ let attractionDesc = require("../templates/attractions.hbs");
 Handlebars.registerHelper('incrementer', (value) => parseInt(value) + 1);
 
 $("#map").click((event) => {
-    if (event.target.className === "clickArea clickAreaToggle" || event.target.className === "clickArea clickAreaToggle border"){
+    if (event.target.className === "clickArea clickAreaToggle" || 
+        event.target.className === "clickArea clickAreaToggle border"){
         let btnID = event.target.id;
         let btnNum = btnID.slice(5);
         themepark.attractionInfo.length = 0;

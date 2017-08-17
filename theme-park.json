@@ -1,9 +1,9 @@
 {
     "park-info": [
         {
-            "name": "Put Your Park Name Here",
-            "description": "Magic Kingdom is Walt Disney World's most popular destination, and is first on everyone's list of things to experience when they arrive in Central Florida. The park is full of great attractions like Seven Dwarfs Mine Train, Space Mountain, and Jungle Cruise, and features lots of entertainment including parades, fireworks spectaculars, character meet and greets, and shows. However, the park can be overwhelming and become quite crowded, even during the low season.",
-            "location": "Orlando, Florida",
+            "name": "The Wizarding World",
+            "description": "The wizarding world, also referred to as the magical community, is the society in which wizards and witches live and interact separate from the Muggle (non-wizarding) society. The two communities are kept separate through the use of charms, spells, and secrecy. Wizards are forbidden to reveal anything about magic to Muggle society due to the International Statute of Wizarding Secrecy. Each country has a form of wizarding government to oversee magical affairs in their territory, such as a Ministry of Magic or a Council of Magic. The International Confederation of Wizards serves as a wizarding intergovernmental organisation.",
+            "location": "Wizarding World...Duh",
             "operating_hours":[
                 {
                     "opening": 9,
@@ -15,44 +15,44 @@
     "areas": [
         {
             "id": 1,
-            "name": "Main Street U.S.A.",
-            "description": "Main Street is a Disneyfied turn-of-the-20th-century small-town American thoroughfare. Its buildings are real, not elaborate props. Attention to detail is exceptional: Furnishings and fixtures are true to the period. Along the street are shops, character-greeting venues, eating places, City Hall, and a fire station. Occasionally, horse-drawn trolleys, fire engines, and horseless carriages transport visitors along Main Street to the Central Plaza.",
-            "colorTheme": "730217"
+            "name": "Floo Network",
+            "description": "The Floo Network is a mode of transportation in the wizarding world in which a witch or wizard goes from one place to another by means of Floo powder and a fireplace. Many fireplaces are connected in the Floo Network, and the traveller need only speak the desired fireplace they wish to arrive very clearly as they stand in the emerald green flames.",
+            "colorTheme": "033807"
         },
         {
             "id": 2,
-            "name": "Adventureland",
-            "description": "One of the two great things about the design of Adventureland is that it blends together so many different architecture styles. In the span of about one city block, you'll travel from the Victorian-era trappings of Swiss Family Treehouse and 1920's Jungle Cruise, past Middle Eastern bazaars and Polynesian tiki huts, to the colonial forts of the Spanish Main.",
-            "colorTheme": "D15530"
+            "name": "Divination Classroom",
+            "description": "The Divination Classroom is where Divination classes are taught at Hogwarts School of Witchcraft and Wizardry. It is located in the North Tower. It is accessible through a circular trapdoor and is described as looking like a cross between somebody's attic and an old-fashioned teashop. The classroom is located at the top of the Divination Stairwell, connected to the rest of the castle by the long corridor.",
+            "colorTheme": "E3A000"
         },
         {
             "id": 3,
-            "name": "Frontierland",
-            "decription": "It may be argued that Frontierland is the Magic Kingdom's best land. Themed to mimic the architecture of the American West, Frontierland includes two of the Magic Kingdom's headliner rides (Splash Mountain and Big Thunder Mountain), one of the Magic Kingdom's best spots to relax and unwind (Tom Sawyer Island), arguably the park's best counter service restaurant (Pecos Bill's Tall Tale Inn and Cafe) and some of the best spots for viewing the afternoon and evening parades.",
-            "colorTheme": "A37849"
+            "name": "Potions",
+            "decription": "Potions is a core class and subject taught at Hogwarts School of Witchcraft and Wizardry and Ilvermorny School of Witchcraft and Wizardry. In this class, students learn the correct way to brew potions. They follow specific recipes and use various magical ingredients to create the potions, starting with simple ones and moving to more advanced ones as they progress in knowledge. A standard potions kit includes plant ingredients such as Belladonna and supplies such as glass phials and weighing scales.",
+            "colorTheme": "00165E"
         },
         {
             "id": 4,
-            "name": "Liberty Square",
-            "decription": "Liberty Square re-creates America at the time of the American Revolution. The architecture is Federal or Colonial, and provides a seamless transition from the edge of Fantasyland to Frontierland. A real, 130-year-old live oak, the Liberty Tree, lends dignity and grace to the setting.",
-            "colorTheme": "2594D9"
+            "name": "Honeydukes",
+            "decription": "Honeydukes is a legendary wizarding sweets shop famous for its chocolate and many, wonderful and wild sweets. It is located in the wintry, all-wizarding village of Hogsmeade, in Scotland, and is frequented by students and teachers alike; indeed, one can barely move due to the crowd of visitors throughout the Christmas season. Honeydukes was first established in 1641.",
+            "colorTheme": "9C1203"
         },
         {
             "id": 5,
-            "name": "Fantasyland",
-            "decription": "Fantasyland the heart of the Magic Kingdom and a truly enchanting place spread gracefully like a miniature Alpine village beneath the steepled towers of Cinderella Castle is divided into three distinct sections. Directly behind Cinderella Castle and set upon a snowcapped mountain is Beast’s Castle, part of a Beauty and the Beast–themed area. The middle of Fantasyland holds the headliners, including Under the Sea - Journey of the Little Mermaid and Seven Dwarfs Mine Train. The placement of these two attractions allows good traffic flow either to the left (toward Beast’s Castle) for dining, to the right for attractions geared to smaller children, or back to the original part of Fantasyland for classic attractions such as Peter Pan’s Flight and The Many Adventures of Winnie the Pooh. The far-right corner of Fantasyland includes Dumbo the Flying Elephant, The Barnstormer featuring the Great Goofini, and the Walt Disney World Railroad - Fantasyland Station is called Storybook Circus as an homage to Disney’s Dumbo film.",
-            "colorTheme": "E73C81"
+            "name": "Herbology",
+            "decription": "Herbology is a mandatory class at Hogwarts for the first five years of a student's education. Students spend class time learning about the different varieties of magical plants that exist. The further into a student's education the more difficult and dangerous the plants become.",
+            "colorTheme": "00165E"
         },
         {
             "id": 6,
-            "name": "Tomorrowland",
-            "decription": "Here in Tomorrowland, the future is today! So, ready your rockets, boys and girls, as you blast into the twin orbits of innovation and exploration. But Tomorrowland is more than a fascinating collection of gizmos — it's a spaceport where your imagination lands each day to glimpse otherworldly wonders, embark on fantastic voyages, and witness the pioneering of the human spirit.",
+            "name": "Defense Against the Dark Arts",
+            "decription": "Defence Against the Dark Arts (sometimes written as DADA) is a subject taught at Hogwarts School of Witchcraft and Wizardry and Ilvermorny School of Witchcraft and Wizardry[1]. In this class students learn how to magically defend themselves against Dark Creatures, the Dark Arts, and other dark charms. Offensive magic is also taught in this class, such as how to duel, which requires the use of both offensive and defensive magic.",
             "colorTheme": "3E4D8C"
         },
         {
             "id": 7,
-            "name": "Cinderlla Castle",
-            "description": "Rising high in the sky at the end of Main Street, U.S.A., Cinderella Castle welcomes you to a magical world of fantasy and fun. The central icon of Walt Disney World Resort, the castle invites all who visit to celebrate in a place where dreams come true.",
+            "name": "Room of Requirement",
+            "description": "The Room of Requirement, also known as the Come and Go Room, is a secret room within Hogwarts Castle, that only appears when a person is in great need of it. The room is thought to have some degree of sentience, because it transforms itself into whatever the witch or wizard needs it to be at that moment in time, although there are some limitations. For example, it cannot create food, as that is one of the five Principal Exceptions to Gamp's Law of Elemental Transfiguration. ",
             "colorTheme": "F2CF53"
         }
     ],
