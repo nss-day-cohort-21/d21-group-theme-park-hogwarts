@@ -7,4 +7,4 @@ let areInfo = require("./area-info");
 let time_picker = require("./time_picker");
 let search = require("./search");
 let timeCalls = require("./time-calls");
-
+let sendData = require("./firebase-send-data");
