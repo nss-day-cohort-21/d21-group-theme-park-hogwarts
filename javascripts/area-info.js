@@ -13,6 +13,7 @@ $("#map").click((event) => {
         let btnNum = btnID.slice(5);
         themepark.attractionInfo.length = 0;
         $('#output').empty();
+        $('#output').html(`<h3>Attractions in this Area:</h3><br>`);
 
         themepark.getAttractions(btnNum)
         .then ((attractionData) => {
