@@ -33,10 +33,10 @@ function showAreas(data) {
                 let R = convertHexR(`${colorValue}`);
                 let G = convertHexG(`${colorValue}`);
                 let B = convertHexB(`${colorValue}`);
-                function convertHexR(h) {return parseInt((removeHash(h)).substring(0,2),16);}
-                function convertHexG(h) {return parseInt((removeHash(h)).substring(2,4),16);}
-                function convertHexB(h) {return parseInt((removeHash(h)).substring(4,6),16);}
-                function removeHash(h) {return (h.charAt(0)=="#") ? h.substring(1,7):h;}
+                function convertHexR(hex) {return parseInt((removeHash(hex)).substring(0,2),16);}
+                function convertHexG(hex) {return parseInt((removeHash(hex)).substring(2,4),16);}
+                function convertHexB(hex) {return parseInt((removeHash(hex)).substring(4,6),16);}
+                function removeHash(hex) {return (hex.charAt(0)=="#") ? hex.substring(1,7):hex;}
                     // console.log(R,G,B);
                     let alhpaColor = `rgba(${R},${G},${B},.4)`;
                 $(`#box--${indAreaID}`).css("background-color", `${alhpaColor}`);
