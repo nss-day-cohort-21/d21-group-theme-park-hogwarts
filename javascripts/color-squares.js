@@ -50,7 +50,6 @@ function hideAreas(data) {
             $.each(keys,(index, item) => {
                 indAreaID = data[item].id;
                 $(`#box--${indAreaID}`).css("background", `none`);
-                $(`#box--${indAreaID}`).css("cursor", `pointer`);
             });
         }
 
