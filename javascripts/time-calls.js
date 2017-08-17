@@ -64,53 +64,7 @@ themepark.getAttractions = function(btnNum){
 
 themepark.attractionInfo = [];
 
-let regex = /([^1][2]:)([0-5][0-9][p])\w+/ig;
-
 console.log( "themepark.attractionInfo", themepark.attractionInfo );
-
-themepark.loadTime()
-.then(
-	(timeData) => {
-
-		timeData.forEach((item)=> {
-			if (regex.test(item.times)) {
-				themepark.attractionInfo.push(item);
-			}
-				
-		});
-		return themepark.loadAreas();
-
-	}).then
-	((loadedAreas) => {
-
-		for (let i = 0; i < loadedAreas.length; i++) {
-
-			for (let j = 0; j < themepark.attractionInfo.length; j++) {
-				
-				if (themepark.attractionInfo[j].area_id === loadedAreas[i].id) {
-
-					themepark.attractionInfo[j].area_name = loadedAreas[i].name;
-				}
-			}
-		}
-
-		return themepark.loadTypes();
-
-	}).then
-	((loadedTypes) => {
-
-		for (let i = 0; i < loadedTypes.length; i++) {
-
-			for (let j = 0; j < themepark.attractionInfo.length; j++) {
-				
-				if (themepark.attractionInfo[j].type_id === loadedTypes[i].id) {
-
-					themepark.attractionInfo[j].attraction_type = loadedTypes[i].name;
-				}
-			}
-		}
-	});
-
 
 module.exports = themepark;
 

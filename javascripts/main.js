@@ -8,5 +8,3 @@ let time_picker = require("./time_picker");
 let search = require("./search");
 let timeCalls = require("./time-calls");
 
-//TESTING
-// let mapFunction = require("./test-colors");
