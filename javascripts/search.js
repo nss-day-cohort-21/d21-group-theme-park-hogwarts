@@ -1,6 +1,8 @@
 "use strict";
 
 let themepark = require("./time-calls");
+let Handlebars = require('hbsfy/runtime');
+let attractionDesc = require('../templates/attractions.hbs');
 
 var variableInput;
 
@@ -14,10 +16,60 @@ $(document).keypress(function(e) {
           
           themepark.loadTime()
             .then((attractionData) => {
+                console.log("attractionData", attractionData);
+
+                themepark.attractionInfo = [];
+
                 var searchedAttractions = attractionData.filter(compareSearchResults);
                 console.log("searchedAttractions", searchedAttractions);
                 areasToHighlight(searchedAttractions);
+
+                console.log("themepark.attractionInfo right after searchedAttractions generated", themepark.attractionInfo);
+
+                for (let obj in searchedAttractions) {
+                themepark.attractionInfo.push(searchedAttractions[obj]);
+                }
+
+                console.log("themepark.attractionInfo **", themepark.attractionInfo);
+                console.log("this is the latest");
+
+            return themepark.loadAreas();
+
+              }).then
+              ((loadedAreas) => {
+                  console.log( "loadedAreas", loadedAreas );
+                  for (let i = 0; i < loadedAreas.length; i++) {
+                      for (let j = 0; j < themepark.attractionInfo.length; j++) {
+                          if (themepark.attractionInfo[j].area_id === loadedAreas[i].id) {
+                            
+                              themepark.attractionInfo[j].area_name = loadedAreas[i].name;
+                          }
+                      }
+                  }
+                  return themepark.loadTypes();
+
+              }).then
+              ((loadedTypes) => {
+                  console.log( "loadedTypes", loadedTypes );
+                  for (let i = 0; i < loadedTypes.length; i++) {
+                      for (let j = 0; j < themepark.attractionInfo.length; j++) {
+                          if (themepark.attractionInfo[j].type_id === loadedTypes[i].id) {
+
+                              themepark.attractionInfo[j].attraction_type = loadedTypes[i].name;
+                              $('#output').append(attractionDesc(themepark.attractionInfo[j]));
+                          }
+                      }
+                  }
+                  $(".attractionName").click(function () {
+                $(this).closest("div").find(".hidden").toggle();
+
+                
             });
+                   console.log( "MUTATED", themepark.attractionInfo );
+              });
+
+             
+            
 
       } else {
           window.alert("You must recite the spell and tap the map with your wand, Muggle!");
