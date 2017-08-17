@@ -21,7 +21,7 @@ $(document).keypress(function(e) {
           getSearchInput();
 
       } else {
-          window.alert("You must open the map!");
+          window.alert("You must recite the spell and tap the map with your wand, Muggle!");
       }
     }
 });
