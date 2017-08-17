@@ -91,9 +91,14 @@ function areasToHighlight(searchedAttractionsInput) {
 
     console.log("arrayAreasToHighlight", arrayAreasToHighlight);
 
+    let btnWrapper = document.getElementById("btnWrapper");
+    btnWrapper.classList.remove("highlighted");
+
     arrayAreasToHighlight.forEach((value, index) =>  {
-            let elementBordered = document.getElementById(value);
-            elementBordered.classList.add("border");
+            let elementToHighlight = document.getElementById(value);
+            let elementBordered = elementToHighlight.parentElement;
+            // elementBordered.classList.add("border");
+            elementBordered.classList.add("highlighted");
 
         });
 }
