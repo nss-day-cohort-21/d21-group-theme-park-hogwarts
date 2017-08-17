@@ -3,6 +3,7 @@ console.log("area-info.js, Yo!");
 
 let Handlebars = require('hbsfy/runtime');
 let themepark = require("./time-calls.js");
+let areaName = require("../templates/areaName.hbs");
 let attractionDesc = require("../templates/attractions.hbs");
 Handlebars.registerHelper('incrementer', (value) => parseInt(value) + 1);
 
@@ -36,6 +37,7 @@ $("#map").click((event) => {
                 themepark.attractionInfo.forEach((element, position)=>{
                     if(item.id === themepark.attractionInfo[position].area_id){
                         themepark.attractionInfo[position].area_name = item.name;
+                        $('#outputHeader').append(areaName(themepark.attractionInfo[position]));
                         $('#output').append(attractionDesc(themepark.attractionInfo[position]));
                         
                     }

@@ -29,6 +29,64 @@ body, a:hover {
     width: 110%;
 }
 
+/////HANDLEBARS OUTPUT/////
+///COLUMN FOR OUTPUT///
+.output{
+    color: white;
+    padding: 5px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background: $ravenclaw-rgba;
+}
+
+#singleOutput{
+    padding:5px;
+    margin-bottom: 5px;
+    border: 1px solid $hufflepuff;
+}
+.attractionName{
+    font-size: .9em;
+    color: white;  
+    line-height: .2em;  
+}
+
+.attractionName:hover{
+    color:$hufflepuff;
+    text-decoration: none;
+}
+.attrType{
+    font-style: italic;
+    font-size: .7em;
+    // font-weight: bold;
+    text-transform: uppercase;
+}
+
+.areaName{
+    font-size: .8em;
+    font-style: italic;
+}
+
+#output {
+    overflow-x: auto;
+    white-space: wrap;
+    height: 600px;
+    padding: 15px;
+}
+
+.hide {
+    display: none;
+}
+
+#timeList li {
+ padding: 10px;
+ list-style: none;
+}
+
+
+h5{
+    color: white;
+}
+
 ///////NAV BAR ELEMENTS///////
 nav{
     margin-bottom: 10px;
@@ -61,15 +119,6 @@ nav{
     padding: 10px;
     cursor: $cursor;
    
-}
-
-////COLUMN FOR OUTPUT///
-.output{
-    color: white;
-    padding: 5px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    background: $ravenclaw-rgba;
 }
 
 /////MAP/////
@@ -133,27 +182,8 @@ nav{
 .clickArea:focus {
     outline: 0;
 }
-
-/* OUTPUT */
-
-#output {
-    overflow-x: auto;
-    white-space: wrap;
-    height: 600px;
-    padding: 15px;
-}
-
-#output h5 a {
-    color: white;
-}
-
-.hide {
-    display: none;
-}
-
-#timeList li {
- padding: 10px;
- list-style: none;
+.clickArea-none:focus {
+    outline: 0;
 }
 
 ////changes the map when opened and closed
