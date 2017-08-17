@@ -14,7 +14,7 @@ $(document).keypress(function(e) {
       if ($("#openMap").val() === "Mischief Managed") {
           variableInput = $("#search").val();
           $('#output').empty();
-          $('#output').html(`<h3>Happening at This Time: </h3><br>`);
+          $('#output').html(`<h3>Search Results: ${variableInput} </h3><br>`);
 
           themepark.loadTime()
             .then((attractionData) => {
