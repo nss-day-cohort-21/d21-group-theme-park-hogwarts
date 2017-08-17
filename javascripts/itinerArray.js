@@ -17,17 +17,6 @@ $("#output").click(function (e) {
             }
         });
 
-        $("#box--8").click(function () {
-            $('#output').html(`<p class="outputHeader">Your Itinerary:</p> <button class="btn btn-sm itin-save">Save</button> <br><br>`);
-
-            themepark.itinArray.forEach((item, index) => {
-                $("#output").append(handlebar(themepark.itinArray[index]));
-            });
-            $(".attractionName").click(function () {
-                $(this).closest("div").find(".hidden").toggle();
-
-            });
-        });
 
 
         console.log('array', themepark.itinArray);
@@ -36,6 +25,7 @@ $("#output").click(function (e) {
         let delButton = event.target.id;
         let delButtonNumber = delButton.slice(10);
         console.log('button number', delButtonNumber);
+        $("#output").html(`<p class="outputHeader">Your Itinerary:</p> <button class="btn btn-sm itin-save">Save</button> <br><br>`);
         $.each(themepark.itinArray, (index, item) => {
             console.log("item", item);
             console.log('delbtn', delButtonNumber);
@@ -59,6 +49,18 @@ $("#output").click(function (e) {
     }
 });
 
+$("#box--8").click(function () {
+    console.log("Box 8");
+    $('#output').html(`<p class="outputHeader">Your Itinerary:</p> <button class="btn btn-sm itin-save">Save</button> <br><br>`);
+
+    themepark.itinArray.forEach((item, index) => {
+        $("#output").append(handlebar(themepark.itinArray[index]));
+    });
+    $(".attractionName").click(function () {
+        $(this).closest("div").find(".hidden").toggle();
+
+    });
+});
 
 
 
