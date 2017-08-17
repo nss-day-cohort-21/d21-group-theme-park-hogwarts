@@ -27,8 +27,8 @@ $(function () {
     $('.timepicker').timepicker({
         timeFormat: 'h p',
         interval: 60,
-        minTime: '1',
-        maxTime: '11:59pm',
+        minTime: '9:00am',
+        maxTime: '9:00pm',
         defaultTime: 'now',
         startTime: '9:00',
         dynamic: false,
@@ -43,6 +43,7 @@ $(function () {
             //clear main output array
             themepark.attractionInfo.length = 0;
             $('#output').empty();
+            $('#output').html(`<p class="outputHeader">Happening Soon: </p>`);
             //Begin Promise chain
             themepark.loadTime()
              .then(
@@ -89,4 +90,3 @@ $(function () {
         }
     });
 });
-
