@@ -27,8 +27,8 @@ $(function () {
     $('.timepicker').timepicker({
         timeFormat: 'h p',
         interval: 60,
-        minTime: '1',
-        maxTime: '11:59pm',
+        minTime: '9:00am',
+        maxTime: '9:00pm',
         defaultTime: 'now',
         startTime: '9:00',
         dynamic: false,
