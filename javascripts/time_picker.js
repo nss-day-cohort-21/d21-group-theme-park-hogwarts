@@ -1,6 +1,8 @@
 "use strict";
 
-let themepark = require("./time-calls.js");
+let themepark = require('./time-calls.js');
+let Handlebars = require('hbsfy/runtime');
+let attractionDesc = require('../templates/attractions.hbs');
 //Object to hold regular expressions for each hour.
 let regexHolder = 
                     {
@@ -40,6 +42,7 @@ $(function () {
             // console.log( "regex", regex );
             //clear main output array
             themepark.attractionInfo.length = 0;
+            $('#output').empty();
             //Begin Promise chain
             themepark.loadTime()
              .then(
@@ -73,10 +76,15 @@ $(function () {
                           if (themepark.attractionInfo[j].type_id === loadedTypes[i].id) {
 
                               themepark.attractionInfo[j].attraction_type = loadedTypes[i].name;
+                              $('#output').append(attractionDesc(themepark.attractionInfo[j]));
                           }
                       }
                   }
+                  $(".attractionName").click(function () {
+                $(this).closest("div").find(".hidden").toggle();
+            });
               });
+
               console.log( "MUTATED", themepark.attractionInfo );
         }
     });
