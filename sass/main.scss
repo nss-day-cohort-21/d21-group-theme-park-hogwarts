@@ -39,13 +39,19 @@ width: 110%;
     background: $ravenclaw-rgba;
 }
 
+.outputHeader{
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
 #singleOutput{
     padding:5px;
     margin-bottom: 5px;
-    border: 1px solid $hufflepuff;
+    border: 1px solid $hufflepuff-rgba;
+    border-radius: 10px;
 }
 .attractionName{
-    font-size: 1.2em;
+    font-size: 1em;
     color: white;  
     line-height: .2em;  
 }
@@ -77,11 +83,14 @@ width: 110%;
     display: none;
 }
 
-#timeList li {
- padding: 10px;
- list-style: none;
-}
+// #timeList li {
+//  padding: 10px;
+//  list-style: none;
+// }
 
+.description{
+    font-size: .75em;
+}
 
 h5{
     color: white;
