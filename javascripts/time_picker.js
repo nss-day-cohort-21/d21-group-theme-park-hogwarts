@@ -43,7 +43,7 @@ $(function () {
             //clear main output array
             themepark.attractionInfo.length = 0;
             $('#output').empty();
-            $('#output').html(`<h3>Happening at This Time: </h3><br>`);
+            $('#output').html(`<p class="outputHeader">Happening Soon: </p>`);
             //Begin Promise chain
             themepark.loadTime()
              .then(
@@ -90,4 +90,3 @@ $(function () {
         }
     });
 });
-

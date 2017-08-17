@@ -1,13 +1,14 @@
-<div>
-<h5><a class="attractionName" href="#">{{name}}</a></h5>
+<div id="singleOutput">
+<p><a class="attractionName" href="#">{{name}}</a> <br><span class="attrType">({{attraction_type}})</span></p>
 <div class="hidden">
-<h5>({{attraction_type}})</h5>
-<p style="font-style: italic;">{{area_name}}</p>
-{{#if times}}
+{{!-- <h5>({{attraction_type}})</h5> --}}
+<p class="areaName">Where: {{area_name}}<br>
+{{#if times}}When:
 	{{#each times}}
 	[{{this}}],
 	{{/each}}
 {{/if}}
-<p>{{description}}</p></div>
+</p>
+<p class="description">{{description}}</p></div>
 </div>
 
