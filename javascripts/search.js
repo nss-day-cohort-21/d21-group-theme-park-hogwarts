@@ -1,29 +1,23 @@
 "use strict";
 
-function getSearchInput () {
-    $.ajax({
-        url: "https://theme-park-19828.firebaseio.com/attractions.json"
-    }).done(function(attractionData){
-        var searchedAttractions = attractionData.filter(compareSearchResults);
-        console.log("searchedAttractions", searchedAttractions);
-        areasToHighlight(searchedAttractions);
-    });
-
-}
+let themepark = require("./time-calls");
 
 var variableInput;
 
 $(document).ready(() => {
-
-
-
 
 $(document).keypress(function(e) {
     if (e.which === 13){
         $(".clickArea").removeClass("border");
       if ($("#openMap").val() === "Mischief Managed") {
           variableInput = $("#search").val();
-          getSearchInput();
+          
+          themepark.loadTime()
+            .then((attractionData) => {
+                var searchedAttractions = attractionData.filter(compareSearchResults);
+                console.log("searchedAttractions", searchedAttractions);
+                areasToHighlight(searchedAttractions);
+            });
 
       } else {
           window.alert("You must recite the spell and tap the map with your wand, Muggle!");
