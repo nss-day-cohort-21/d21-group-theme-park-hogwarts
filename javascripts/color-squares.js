@@ -17,10 +17,7 @@ $("#openMap").on("click", () => {
         $(".map").removeClass("mapButtonClicked");
         $(".hidden-message").removeClass("hidden-message-toggle");
         $(".clickArea").removeClass("border");
-
-        $(".map").removeClass("mapButtonClicked");
         $(".clickArea").removeClass("clickAreaToggle");
-        $(".hidden-message").removeClass("hidden-message-toggle");
         themepark.loadAreas()
         .then(hideAreas);
     }

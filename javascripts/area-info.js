@@ -4,7 +4,7 @@ console.log("area-info.js, Yo!");
 let themepark = require("./time-calls.js");
 
 $("#map").click((event) => {
-    if (event.target.className === "clickArea clickAreaToggle"){
+    if (event.target.className === "clickArea clickAreaToggle" || event.target.className === "clickArea clickAreaToggle border"){
         let btnID = event.target.id;
         let btnNum = btnID.slice(5);
         themepark.attractionInfo.length = 0;
