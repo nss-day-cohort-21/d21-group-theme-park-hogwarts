@@ -20,6 +20,8 @@ $("#output").click(function (e) {
         var ref = database.ref('itineraries');
         var data = themepark.itinArray;
         ref.push(data);
+
+
     }
 });
 
