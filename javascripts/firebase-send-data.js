@@ -1,4 +1,7 @@
+"use strict";
+
 let themepark = require("./time-calls.js");
+var firebase = require('firebase');
 
 var config = {
     apiKey: "AIzaSyAQnvII68bKPvYmmqyVapAAqCsPPYSkZe4",
@@ -9,17 +12,16 @@ var config = {
     messagingSenderId: "1016572363425"
 };
 
-let firebaseObj = {};
-firebaseObj.sendToFirebase = function () {
+$("#output").click(function (e) {
     if(event.target.className === "btn btn-sm itin-save"){
-        console.log("Firebase is working");
+        console.log("Save Button Clicked");
         firebase.initializeApp(config);
         var database = firebase.database();
         var ref = database.ref('itineraries');
         var data = themepark.itinArray;
         ref.push(data);
     }
-
 });
 
-module.exports(firebaseObj);
+
+
