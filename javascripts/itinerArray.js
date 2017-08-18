@@ -58,6 +58,7 @@ $("#box--8").click(function () {
         $("#output").append(handlebar(themepark.itinArray[index]));
     });
     $(".attractionName").click(function () {
+        $(".hidden").hide();
         $(this).closest("div").find(".hidden").toggle();
 
     });
