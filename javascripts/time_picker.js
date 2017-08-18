@@ -31,7 +31,7 @@ $(function () {
         maxTime: '9:00pm',
         defaultTime: 'now',
         startTime: '9:00',
-        dynamic: false,
+        dynamic: true,
         dropdown: true,
         scrollbar: true,
         //On CHANGE, run function to call data and filter by time.
