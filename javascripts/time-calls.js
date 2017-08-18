@@ -74,6 +74,8 @@ themepark.clearHighlight = function(){
 
 themepark.attractionInfo = [];
 
+themepark.itinArray = [];
+
 console.log( "themepark.attractionInfo", themepark.attractionInfo );
 
 module.exports = themepark;

@@ -5,6 +5,7 @@ let Handlebars = require('hbsfy/runtime');
 let themepark = require("./time-calls.js");
 let areaName = require("../templates/areaName.hbs");
 let attractionDesc = require("../templates/attractions.hbs");
+let pushPin = require("../templates/pushPin.hbs");
 Handlebars.registerHelper('incrementer', (value) => parseInt(value) + 1);
 
 $("#map").click((event) => {
@@ -48,7 +49,6 @@ $("#map").click((event) => {
             $(".attractionName").click(function () {
                 $(this).closest("div").find(".hidden").toggle();
             });
-            console.log("includes area name and attraction type", themepark.attractionInfo);
         });
     }
 });
