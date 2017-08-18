@@ -82,8 +82,9 @@ $(function () {
                       }
                   }
                   $(".attractionName").click(function () {
-                $(this).closest("div").find(".hidden").toggle();
-            });
+                    $(".hidden").hide();
+                    $(this).closest("div").find(".hidden").toggle();
+                  });
               });
 
               console.log( "MUTATED", themepark.attractionInfo );

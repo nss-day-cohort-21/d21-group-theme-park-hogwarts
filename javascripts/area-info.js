@@ -47,6 +47,7 @@ $("#map").click((event) => {
                 
             });
             $(".attractionName").click(function () {
+                $(".hidden").hide();
                 $(this).closest("div").find(".hidden").toggle();
             });
         });
