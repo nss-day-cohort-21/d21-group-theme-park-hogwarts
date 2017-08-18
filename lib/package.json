@@ -2,6 +2,7 @@
   "name": "modules",
   "version": "0.1.0",
   "devDependencies": {
+    "firebase": "^4.3.0",
     "grunt": "^0.4.0",
     "grunt-browserify": "^5.0.0",
     "grunt-contrib-jshint": "^0.11.2",
