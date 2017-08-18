@@ -27,15 +27,16 @@ $("#output").click(function (e) {
         console.log('button number', delButtonNumber);
         $("#output").html(`<p class="outputHeader">Your Itinerary:</p> <button class="btn btn-sm itin-save">Save</button> <br><br>`);
         $.each(themepark.itinArray, (index, item) => {
-            console.log("item", item);
+            console.log("item id", item.id);
             console.log('delbtn', delButtonNumber);
-            if (delButtonNumber == item.id) {
+            if (delButtonNumber == themepark.itinArray[index].id) {
                 themepark.itinArray.indexOf(item);
                 console.log('theme park array', themepark.itinArray.indexOf(item));
                 // $(`#removeBtn-${item.id}`).prop('disabled', true);
                 let itinItem = themepark.itinArray.indexOf(item);
                 themepark.itinArray.splice(itinItem, 1);
                 $("#output").empty();
+                $("#output").html(`<p class="outputHeader">Your Itinerary:</p> <button class="btn btn-sm itin-save">Save</button> <br><br>`);
                 themepark.itinArray.forEach((item, index) => {
                     $("#output").append(handlebar(themepark.itinArray[index]));
                 });
