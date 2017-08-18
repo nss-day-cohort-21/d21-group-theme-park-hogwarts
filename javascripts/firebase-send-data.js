@@ -9,10 +9,17 @@ var config = {
     messagingSenderId: "1016572363425"
 };
 
-firebase.initializeApp(config);
-console.log("Firebase is working");
-var database = firebase.database();
-var ref = database.ref('itineraries');
-var data = themepark.itinArray;
-console.log(ref);
-ref.push(data);
+let firebaseObj = {};
+firebaseObj.sendToFirebase = function () {
+    if(event.target.className === "btn btn-sm itin-save"){
+        console.log("Firebase is working");
+        firebase.initializeApp(config);
+        var database = firebase.database();
+        var ref = database.ref('itineraries');
+        var data = themepark.itinArray;
+        ref.push(data);
+    }
+
+});
+
+module.exports(firebaseObj);
