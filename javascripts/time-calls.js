@@ -6,6 +6,19 @@ console.log( "datacalls.js" );
 
 var themepark = {};
 
+themepark.loadItin = function() {
+	return new Promise(function(resolve, reject) {
+		let getItin = new XMLHttpRequest();
+		getItin.open('GET', 'https://theme-park-19828.firebaseio.com/itineraries.json');
+		getItin.send();
+		getItin.addEventListener("load", (event) => {
+			themepark.clearHighlight();
+			let itins = JSON.parse(event.target.responseText);
+			resolve(itins);
+		});
+	});
+};
+
 themepark.loadTime = function() {
 	return new Promise(function(resolve, reject) {
 
@@ -75,6 +88,8 @@ themepark.clearHighlight = function(){
 themepark.attractionInfo = [];
 
 themepark.itinArray = [];
+
+themepark.returnedItin = [];
 
 console.log( "themepark.attractionInfo", themepark.attractionInfo );
 
